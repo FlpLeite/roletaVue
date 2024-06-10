@@ -57,7 +57,7 @@
           <div class="card border-0">
             <div class="card-body row">
               <p class="desconto">10% OFF</p>
-              <img src="../assets/images/camisa1.png" alt="">
+              <img src="../assets/images/camisa2.png" alt="">
               <p class="price"><b>$29.99</b></p>
             </div>
           </div>
@@ -107,7 +107,7 @@
 
   .card {
     position: relative;
-    box-shadow: 0px 1px 13px rgba(0,0,0,0.1);
+    box-shadow: 0px 1px 13px rgba(0,0,0,0.4);
     cursor: pointer;
     transition: all 120ms;
     display: flex;

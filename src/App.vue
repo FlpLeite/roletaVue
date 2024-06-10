@@ -1,11 +1,22 @@
 <script setup>
 import {ref} from "vue"
 import Roleta from "./components/Roleta.vue"
+import CartSidebar from './components/CartSidebar.vue'
 
 const mostrarRoleta = ref(false)
+const mostrarCarrinho = ref(false)
 
 const aparecerRoleta = () => {
   mostrarRoleta.value = !mostrarRoleta.value;
+};
+
+const cartItems = ref([
+  { name: 'Camisa 1', price: '$29.99', image: './assets/images/camisa1.png' },
+  { name: 'Camisa 2', price: '$29.99', image: './assets/images/camisa3.png' }
+]);
+
+const handleCartClosed = () => {
+  mostrarRoleta.value = true;
 };
 
 </script>
@@ -13,14 +24,15 @@ const aparecerRoleta = () => {
 <template>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="">
+    <a class="navbar-brand" href="/">
       <img src="./assets/images/logo.png" height="100px" alt="">
     </a>
     
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Camisas</a>
+          <a class="nav-link active" aria-current="page" href="/">Camisas</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -32,22 +44,25 @@ const aparecerRoleta = () => {
           </ul>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Pesquisar</button>
-      </form>
-
-      <div class="navbar-brand cart" @click="aparecerRoleta">
+      <a href='/login'><button type="button" class="button type1" style="margin-right: 10px;">Entrar</button></a>
+      <a href='/cadastro'><button type="button" class="button type1">Cadastrar</button></a>
+      <div class="navbar-brand cart" @click="mostrarCarrinho = !mostrarCarrinho">
         <img src="https://www.svgrepo.com/show/530571/conversation.svg" alt="Logo" width="60" height="60" class="d-inline-block align-text-top">
       </div>
     </div>
   </div>
 </nav>
-
-  <div class="main">
-      <Roleta v-if="mostrarRoleta" :show="mostrarRoleta" @update:show="mostrarRoleta = $event"></Roleta>
+<div class="main">
+    <Roleta v-if="mostrarRoleta" :show="mostrarRoleta" @update:show="mostrarRoleta = $event"></Roleta>
+    <CartSidebar 
+      :show="mostrarCarrinho" 
+      :cartItems="cartItems" 
+      @update:show="mostrarCarrinho = $event" 
+      @cart-closed="handleCartClosed" 
+    />
     <router-view></router-view>
-  </div>
+</div>
+
 
   
  
@@ -92,5 +107,50 @@ const aparecerRoleta = () => {
   .cart{
     margin-left: 60px;
   }
+
+  .button {
+  height: 50px;
+  width: 120px;
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
+  border: 2px solid #252525;
+  overflow: hidden;
+  border-radius: 30px;
+  color: #333;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-txt {
+  z-index: 1;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+.type1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+  background-color: #333;
+  border-radius: 30px;
+  visibility: hidden;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+}
+
+.button:hover {
+  box-shadow: 1px 1px 200px #252525;
+  color: #2544e2;
+  border: 2px solid #699ce7;
+}
+
+.type1:hover::after {
+  visibility: visible;
+  transform: scale(100) translateX(2px);
+}
+
 
 </style>
