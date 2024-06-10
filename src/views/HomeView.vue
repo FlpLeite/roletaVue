@@ -57,7 +57,7 @@
           <div class="card border-0">
             <div class="card-body row">
               <p class="desconto">10% OFF</p>
-              <img src="../assets/images/camisa2.png" alt="">
+              <img src="../assets/images/camisa1.png" alt="">
               <p class="price"><b>$29.99</b></p>
             </div>
           </div>

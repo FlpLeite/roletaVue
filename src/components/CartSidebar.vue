@@ -1,6 +1,6 @@
 <template>
   <div class="cart-sidebar" :class="{ 'is-open': show }">
-  <button class="close-btn" @click="handleCartToggle">X</button>
+  <button class="close-btn" @click="handleCartToggle"> <img src="../assets/images/closeIcon.svg" alt="" height="40px" width="50px"> </button>
   <h2>Meu Carrinho</h2>
   <div v-if="cartItems.length">
     <div v-for="(item, index) in cartItems" :key="index" class="cart-item">
@@ -14,7 +14,15 @@
   <div v-else>
     <p>Seu carrinho está vazio.</p>
   </div>
+  <footer>
+    <center>
+      <button class="buy">
+        Finalizar compra
+      </button>
+    </center>
+  </footer>
 </div>
+
 </template>
 
 <script setup>
@@ -65,7 +73,7 @@ right: 0;
 .close-btn {
 position: absolute;
 top: 10px;
-left: 20px;
+left: 0px;
 background: none;
 border: none;
 font-size: xx-large;
@@ -74,6 +82,8 @@ color: red;
 }
 
 .cart-item {
+border-top: 1px solid;
+padding: 5px;
 display: flex;
 align-items: center;
 margin-bottom: 20px;
@@ -97,5 +107,25 @@ margin: 0;
 .cart-item p {
 margin: 0;
 color: grey;
+}
+
+.buy {
+  width: 250px;
+  height: 55px;
+  border: 3px solid #ea0606;
+  border-radius: 45px;
+  transition: all 0.3s;
+  cursor: pointer;
+  color: #ea0606;
+  background: white;
+  font-size: 1.2em;
+  font-weight: 550;
+  font-family: sans-serif;
+}
+
+.buy:hover {
+  background: #ea0606;
+  color: white;
+  font-size: 1.5em;
 }
 </style>
