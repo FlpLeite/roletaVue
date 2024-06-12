@@ -1,22 +1,32 @@
+
+<script setup>
+import httpCommon from '@/http-common';
+  
+</script>
 <template>
 	<div v-if="modalVisivel" class="modal-body">
 	  <div class="mainbox" id="mainbox">
 		<div class="seta"></div>
+
+
 		<div class="box" id="box">
-		  <div class="box1">
-			<span class="font span1"><h5>10% de desconto</h5></span>
-			<span class="font span2"><h5>5% de desconto</h5></span>
-			<span class="font span3"><h5>15% de desconto</h5></span>
-			<span class="font span4"><h5>Chuteira</h5></span>
-			<span class="font span5"><h5>10% de desconto</h5></span>
-		  </div>
-		  <div class="box2">
-			<span class="font span1"><h5>Coringa</h5></span>
-			<span class="font span2"><h5>Camisa Palmeiras</h5></span>
-			<span class="font span3"><h5>Camisa seleção</h5></span>
-			<span class="font span4"><h5>Frete grátis</h5></span>
-			<span class="font span5"><h5>2 camisas</h5></span>
-		  </div>
+		  	<div class="box1">
+				<span class="font span1"><h5>{{ roleta[0].nome }}</h5></span>
+				<span class="font span2"><h5>{{ roleta[1].nome }}</h5></span>
+				<span class="font span3"><h5>{{ roleta[2].nome }}</h5></span>
+				<span class="font span4"><h5>{{ roleta[3].nome }}</h5></span>
+				<span class="font span5"><h5>{{ roleta[4].nome }}</h5></span>
+
+			</div>
+		
+			<div class="box2">
+				<span class="font span1"><h5>{{ roleta[5].nome }}</h5></span>
+				<span class="font span2"><h5>{{ roleta[6].nome }}</h5></span>
+				<span class="font span3"><h5>{{ roleta[7].nome }}</h5></span>
+				<span class="font span4"><h5>{{ roleta[8].nome }}</h5></span>
+				<span class="font span5"><h5>{{ roleta[9].nome }}</h5></span>
+			</div>
+
 		  <button class="spin" @click="girar()">Girar</button>
 		</div>
 	  </div>
@@ -28,9 +38,19 @@ export default {
  data() {
    return {
 	 modalVisivel: true,
+	 roleta: []
    };
  },
-
+created(){
+	httpCommon.get("api/Premios")
+			.then((data) => {
+				console.log("Dados carregados", {data});
+				this.roleta = data.data
+			})
+			.catch((error) => {
+				console.log("Erro", error);
+			});
+},
  methods: {
    girar() {
 	 console.log("Função girar foi chamada");
