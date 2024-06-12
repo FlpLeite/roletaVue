@@ -11,7 +11,7 @@ const aparecerRoleta = () => {
 };
 
 const cartItems = ref([
-  { name: 'Camisa time 1', price: '$29.99', image: 'src/assets/images/camisa1.png' },
+  { name: 'Camisa 1', price: '$29.99', image: 'src/assets/images/camisa1.png' },
   { name: 'Camisa 2', price: '$25.99', image: 'src/assets/images/camisa3.png' },
   { name: 'Camisa 3', price: '$39.99', image: 'src/assets/images/camisa1.png' }
 ]);
@@ -28,9 +28,7 @@ const handleCartClosed = () => {
       <a class="navbar-brand" href="/">
         <img src="./assets/images/logo.png" height="100px" alt="">
       </a>
-      
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/">Camisas</a>
@@ -58,8 +56,8 @@ const handleCartClosed = () => {
     <CartSidebar 
       :show="mostrarCarrinho" 
       :cartItems="cartItems" 
-      @update:show="mostrarCarrinho = $event" 
-      @cart-closed="handleCartClosed" 
+      @update:show="mostrarCarrinho = $event"
+      @cart-closed="handleCartClosed"
     />
     <router-view></router-view>
 </div>
