@@ -31,25 +31,49 @@
       </div>
       <button type="submit" class="btn btn-primary">Cadastrar</button>
     </form>
+    <div v-if="mensagemErro" class="mensagem-erro">{{ mensagemErro }}</div>
+    <div v-if="mensagemSucesso" class="mensagem-sucesso">{{ mensagemSucesso }}</div>
   </div>
 </template>
 
 <script>
+import httpCommon from '@/http-common';
+
 export default {
   data() {
     return {
+      nome: '',
       email: '',
-      senha: ''
-    }
+      senha: '',
+      mensagemErro: '',
+      mensagemSucesso: ''
+    };
   },
   methods: {
-    handleSubmit() {
-      console.log('Email:', this.email);
-      console.log('Senha:', this.senha);
-      alert('Cadastro realizado com sucesso!');
+    async handleSubmit() {
+      this.mensagemErro = '';
+      this.mensagemSucesso = '';
       
-      this.email = '';
-      this.senha = '';
+      const dadosCadastro = {
+        nome: this.nome,
+        email: this.email,
+        senha: this.senha,
+      };
+
+      try {
+        const resposta = await httpCommon.post('api/Usuario', dadosCadastro);
+        if (resposta.status === 201) {
+          this.mensagemSucesso = 'Cadastro realizado com sucesso!';
+          this.nome = '';
+          this.email = '';
+          this.senha = '';
+        } else {
+          this.mensagemErro = 'Erro ao realizar cadastro. Tente novamente.';
+        }
+      } catch (erro) {
+        this.mensagemErro = 'Erro ao realizar cadastro. Tente novamente.';
+        console.error('Erro ao enviar dados de cadastro:', erro);
+      }
     }
   }
 }
@@ -88,5 +112,15 @@ export default {
 .cadastro-usuario button {
   width: 100%;
   padding: 10px;
+}
+
+.mensagem-erro {
+  color: red;
+  margin-top: 10px;
+}
+
+.mensagem-sucesso {
+  color: green;
+  margin-top: 10px;
 }
 </style>

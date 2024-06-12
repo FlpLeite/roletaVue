@@ -21,7 +21,7 @@
             <div class="card-body row">
               <p class="desconto">10% OFF</p>
               <img src="../assets/images/camisa3.png" alt="">
-              <p class="price"><b>$29.99</b></p>
+              <p class="price"><b>$25.99</b></p>
             </div>
             
           </div>
@@ -31,7 +31,7 @@
             <div class="card-body row">
               <p class="desconto">10% OFF</p>
               <img src="../assets/images/camisa1.png" alt="">
-              <p class="price"><b>$29.99</b></p>
+              <p class="price"><b>$39.99</b></p>
             </div>
           </div>
         </div>
@@ -161,12 +161,12 @@
   }
 
   .card:active {
-    transform: scale(0.90);
+    transform: scale(0.99);
   }
 
   .card:active::after {
     content: "Adicionado !";
-    height: 3.125em;
+    height: 3.6em;
   }
 
   .text {

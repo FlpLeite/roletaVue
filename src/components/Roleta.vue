@@ -8,7 +8,6 @@ import httpCommon from '@/http-common';
 	  <div class="mainbox" id="mainbox">
 		<div class="seta"></div>
 
-
 		<div class="box" id="box">
 		  	<div class="box1">
 				<span class="font span1"><h5>{{ roleta[0].nome }}</h5></span>
@@ -162,27 +161,27 @@ span {
 
 .span1 {
    clip-path: polygon(0 17%, 0 50%, 50% 50%);
-   background-color: #81c4ff;
+   background-color: #00FF00;
 }
 
 .span2 {
    clip-path: polygon(0 17%, 30% 0, 50% 50%);
-   background-color: #16588e;
+   background-color: #0000FF;
 }
 
 .span3 {
    clip-path: polygon(30% 0, 71% 0, 50% 50%);
-   background-color: #000
+   background-color: #800080;
 }
 
 .span4 {
    clip-path: polygon(71% 0, 100% 18%, 50% 50%);
-   background-color: #81c4ff;
+   background-color: #FF0000;
 }
 
 .span5 {
    clip-path: polygon(100% 18%, 100% 50%, 50% 50%);
-   background-color: #81c4ff;
+   background-color: #FFFF00;
 }
 
 /* .box2 .span3 {
@@ -195,9 +194,7 @@ span {
    transform: rotate(180deg);
 } 
 
-.box2 .span1 {
-   background: #208cea;
-}
+
 
 .font {
    color: #fff;
@@ -208,22 +205,22 @@ span {
    position: absolute;
    top: 40%;
    right: 63%;
-   transform: rotate(200deg);
+   transform: rotate(198deg);
    text-align: center;
 }
 
 .box1 .span2 h5 {
    position: absolute;
    top: 25%;
-   right: 57%;
+   right: 56%;
    transform: rotate(-130deg);
    text-align: center;
 }
 
 .box1 .span3 h5 {
    position: absolute;
-   top: 22%;
-   right: 38%;
+   top: 21%;
+   right: 37%;
    transform: rotate(-90deg);
    text-align: center;
 }	
@@ -239,49 +236,48 @@ span {
 .box1 .span5 h5 {
    position: absolute;
    top: 40%;
-   right: 6%;
+   right: 11%;
    transform: rotate(-15deg);
    text-align: center;
 }
 
 .box2 .span1 h5 {
-   font-size: 36px;
    position: absolute;
-   top: 34%;
-   right: 70%;
-   transform: rotate(200deg);
+   top: 40%;
+   right: 64%;
+   transform: rotate(197deg);
    text-align: center;
 }
 
 .box2 .span2 h5 {
    position: absolute;
-   top: 28%;
+   top: 27%;
    right: 54%;
-   transform: rotate(-130deg);
+   transform: rotate(-127deg);
    text-align: center;
 }
 
 .box2 .span3 h5 {
    position: absolute;
-   top: 15%;
-   right: 40%;
+   top: 24%;
+   right: 41%;
    transform: rotate(270deg);
    text-align: center;
 }
 
 .box2 .span4 h5 {
    position: absolute;
-   top: 25%;
-   right: 15%;
-   transform: rotate(310deg);
+   top: 26%;
+   right: 20%;
+   transform: rotate(306deg);
    text-align: center;
 }
 
 .box2 .span5 h5 {
    position: absolute;
-   top: 38%;
-   right: 6%;
-   transform: rotate(-20deg);
+   top: 39%;
+   right: 10%;
+   transform: rotate(-18deg);
    text-align: center;
 }
 

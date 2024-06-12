@@ -1,13 +1,15 @@
 <template>
   <div class="cart-sidebar" :class="{ 'is-open': show }">
   <button class="close-btn" @click="handleCartToggle"> <img src="../assets/images/closeIcon.svg" alt="" height="40px" width="50px"> </button>
-  <h2>Meu Carrinho</h2>
+  <center>
+    <h3 class="myCart">Meu Carrinho</h3>
+  </center>
   <div v-if="cartItems.length">
     <div v-for="(item, index) in cartItems" :key="index" class="cart-item">
       <div>
-        <img :src="item.image" alt="" />
+        <img :src="item.image" alt=""/>
         <h3>{{ item.name }}</h3>
-        <p>{{ item.price }}</p>
+        <p class="price">{{ item.price }}</p>
       </div>
     </div>
   </div>
@@ -15,11 +17,9 @@
     <p>Seu carrinho está vazio.</p>
   </div>
   <footer>
-    <center>
       <button class="buy">
         Finalizar compra
       </button>
-    </center>
   </footer>
 </div>
 
@@ -83,15 +83,14 @@ color: red;
 
 .cart-item {
 border-top: 1px solid;
-padding: 5px;
 display: flex;
 align-items: center;
 margin-bottom: 20px;
 }
 
 .cart-item img {
-width: 50px;
-height: 50px;
+width: 95px;
+height: 95px;
 margin-right: 10px;
 }
 
@@ -109,6 +108,10 @@ margin: 0;
 color: grey;
 }
 
+.myCart{
+  margin-top: 40px;
+}
+
 .buy {
   width: 250px;
   height: 55px;
@@ -118,6 +121,7 @@ color: grey;
   cursor: pointer;
   color: #ea0606;
   background: white;
+  margin-top: 50px;
   font-size: 1.2em;
   font-weight: 550;
   font-family: sans-serif;
