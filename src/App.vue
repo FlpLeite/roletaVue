@@ -11,9 +11,9 @@ const aparecerRoleta = () => {
 };
 
 const cartItems = ref([
-  { name: 'Camisa 1', price: '$29.99', image: 'src/assets/images/camisa1.png' },
+  { name: 'Camisa time 1', price: '$29.99', image: 'src/assets/images/camisa1.png' },
   { name: 'Camisa 2', price: '$25.99', image: 'src/assets/images/camisa3.png' },
-  { name: 'Camisa 3', price: '$39.99', image: 'src/assets/images/camisa3.png' }
+  { name: 'Camisa 3', price: '$39.99', image: 'src/assets/images/camisa1.png' }
 ]);
 
 const handleCartClosed = () => {

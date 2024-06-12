@@ -19,6 +19,7 @@
 
 <script>
 import httpCommon from '@/http-common';
+import router from '@/router'
 
 export default {
   data() {
@@ -45,6 +46,8 @@ export default {
           this.mensagemSucesso = 'Login realizado com sucesso!';
           this.email = '';
           this.senha = '';
+
+          router.push('/')
         } else {
           this.mensagemErro = 'Erro ao realizar login. Tente novamente.';
         }
