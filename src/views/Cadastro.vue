@@ -38,6 +38,7 @@
 
 <script>
 import httpCommon from '@/http-common';
+import router from '@/router'
 
 export default {
   data() {
@@ -67,6 +68,8 @@ export default {
           this.nome = '';
           this.email = '';
           this.senha = '';
+
+          router.push('/login')
         } else {
           this.mensagemErro = 'Erro ao realizar cadastro. Tente novamente.';
         }
