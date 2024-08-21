@@ -10,15 +10,27 @@ const aparecerRoleta = () => {
   mostrarRoleta.value = !mostrarRoleta.value;
 };
 
+const handleCartClosed = () => {
+  mostrarCarrinho.value = false;
+  mostrarRoleta.value = false;
+};
+
+const handleCartToggle = () => {
+  mostrarCarrinho.value = false;
+  mostrarRoleta.value = true;
+}
+
+const handleShowRoleta = () => {
+  mostrarRoleta.value = true;
+}
+
+
 const cartItems = ref([
   { name: 'Camisa 1', price: '$29.99', image: 'src/assets/images/camisa1.png' },
   { name: 'Camisa 2', price: '$25.99', image: 'src/assets/images/camisa3.png' },
   { name: 'Camisa 3', price: '$39.99', image: 'src/assets/images/camisa1.png' }
 ]);
 
-const handleCartClosed = () => {
-  mostrarRoleta.value = true;
-};
 
 </script>
 
@@ -58,6 +70,7 @@ const handleCartClosed = () => {
       :cartItems="cartItems" 
       @update:show="mostrarCarrinho = $event"
       @cart-closed="handleCartClosed"
+      @show-roleta="handleShowRoleta"
     />
     <router-view></router-view>
 </div>

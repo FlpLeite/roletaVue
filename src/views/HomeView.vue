@@ -12,7 +12,7 @@
             <div class="card-body row">
               <p class="desconto">10% OFF</p>
               <img src="../assets/images/camisa1.png" alt="">
-              <p class="price"><b>$29.99</b></p>
+              <p class="price"><b>$20</b></p>
             </div>
           </div>
         </div>

@@ -127,7 +127,6 @@ created(){
    position: relative;
    width: 650px; 
    height: 650px; 
-   margin-top: 50px;
 }
 
 .mainbox::after {
