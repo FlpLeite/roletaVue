@@ -254,8 +254,8 @@ span {
 
 .box2 .span3 h5 {
    position: absolute;
-   top: 24%;
-   right: 41%;
+   top: 22%;
+   right: 37%;
    transform: rotate(270deg);
    text-align: center;
 }
