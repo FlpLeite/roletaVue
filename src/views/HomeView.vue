@@ -1,6 +1,5 @@
 <script setup>
 
-  
 </script>
 
 <template>
@@ -10,7 +9,6 @@
         <div class="col-sm-6 col-md-3">
           <div class="card border-0">
             <div class="card-body row">
-              <p class="desconto">10% OFF</p>
               <img src="../assets/images/camisa1.png" alt="">
               <p class="price"><b>$20</b></p>
             </div>
@@ -19,7 +17,6 @@
         <div class="col-sm-6 col-md-3">
           <div class="card border-0">
             <div class="card-body row">
-              <p class="desconto">10% OFF</p>
               <img src="../assets/images/camisa3.png" alt="">
               <p class="price"><b>$25.99</b></p>
             </div>
@@ -29,7 +26,6 @@
         <div class="col-sm-6 col-md-3">
           <div class="card border-0">
             <div class="card-body row">
-              <p class="desconto">10% OFF</p>
               <img src="../assets/images/camisa1.png" alt="">
               <p class="price"><b>$39.99</b></p>
             </div>
@@ -38,7 +34,6 @@
         <div class="col-sm-6 col-md-3">
           <div class="card border-0">
             <div class="card-body row">
-              <p class="desconto">10% OFF</p>
               <img src="../assets/images/camisa3.png" alt="">
               <p class="price"><b>$29.99</b></p>
             </div>
@@ -47,7 +42,6 @@
         <div class="col-sm-6 col-md-3">
           <div class="card border-0">
             <div class="card-body row">
-              <p class="desconto">10% OFF</p>
               <img src="../assets/images/camisa3.png" alt="">
               <p class="price"><b>$29.99</b></p>
             </div>
@@ -56,7 +50,6 @@
         <div class="col-sm-6 col-md-3">
           <div class="card border-0">
             <div class="card-body row">
-              <p class="desconto">10% OFF</p>
               <img src="../assets/images/camisa1.png" alt="">
               <p class="price"><b>$29.99</b></p>
             </div>
@@ -65,7 +58,6 @@
         <div class="col-sm-6 col-md-3">
           <div class="card border-0">
             <div class="card-body row">
-              <p class="desconto">10% OFF</p>
               <img src="../assets/images/camisa3.png" alt="">
               <p class="price"><b>$29.99</b></p>
             </div>
@@ -73,7 +65,6 @@
         </div><div class="col-sm-6 col-md-3">
           <div class="card border-0">
             <div class="card-body row">
-              <p class="desconto">10% OFF</p>
               <img src="../assets/images/camisa1.png" alt="">
               <p class="price"><b>$29.99</b></p>
             </div>
