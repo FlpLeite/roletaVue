@@ -126,7 +126,7 @@
     position: absolute;
     left: 0;
     bottom: -60px;
-    background: #00AC7C;
+    background: #00ca5b;
     color: #fff;
     height: 65px;
     width: 100%;

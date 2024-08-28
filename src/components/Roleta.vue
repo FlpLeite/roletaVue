@@ -1,103 +1,99 @@
-
 <script setup>
 import httpCommon from '@/http-common';
-  
 </script>
+
 <template>
-	<div v-if="modalVisivel" class="modal-body">
-	  <div class="mainbox" id="mainbox">
-		<div class="seta"></div>
-
-		<div class="box" id="box">
-		  	<div class="box1">
-				<span class="font span1"><h5>{{ roleta[0].nome }}</h5></span>
-				<span class="font span2"><h5>{{ roleta[1].nome }}</h5></span>
-				<span class="font span3"><h5>{{ roleta[2].nome }}</h5></span>
-				<span class="font span4"><h5>{{ roleta[3].nome }}</h5></span>
-				<span class="font span5"><h5>{{ roleta[4].nome }}</h5></span>
-
-			</div>
-		
-			<div class="box2">
-				<span class="font span1"><h5>{{ roleta[5].nome }}</h5></span>
-				<span class="font span2"><h5>{{ roleta[6].nome }}</h5></span>
-				<span class="font span3"><h5>{{ roleta[7].nome }}</h5></span>
-				<span class="font span4"><h5>{{ roleta[8].nome }}</h5></span>
-				<span class="font span5"><h5>{{ roleta[9].nome }}</h5></span>
-			</div>
-
-		  <button class="spin" @click="girar()">Girar</button>
-		</div>
-	  </div>
-	</div>
+  <div v-if="modalVisivel" class="modal-body">
+    <div class="mainbox" id="mainbox">
+      <div class="seta"></div>
+      <div class="box" id="box">
+        <div class="box1">
+          <span :class="['font', 'span1', { 'secao-destacada': activeSection === 0 }]"><h5>{{ roleta[0].nome }}</h5></span>
+          <span :class="['font', 'span2', { 'secao-destacada': activeSection === 1 }]"><h5>{{ roleta[1].nome }}</h5></span>
+          <span :class="['font', 'span3', { 'secao-destacada': activeSection === 2 }]"><h5>{{ roleta[2].nome }}</h5></span>
+          <span :class="['font', 'span4', { 'secao-destacada': activeSection === 3 }]"><h5>{{ roleta[3].nome }}</h5></span>
+          <span :class="['font', 'span5', { 'secao-destacada': activeSection === 4 }]"><h5>{{ roleta[4].nome }}</h5></span>
+        </div>
+        <div class="box2">
+          <span :class="['font', 'span1', { 'secao-destacada': activeSection === 5 }]"><h5>{{ roleta[5].nome }}</h5></span>
+          <span :class="['font', 'span2', { 'secao-destacada': activeSection === 6 }]"><h5>{{ roleta[6].nome }}</h5></span>
+          <span :class="['font', 'span3', { 'secao-destacada': activeSection === 7 }]"><h5>{{ roleta[7].nome }}</h5></span>
+          <span :class="['font', 'span4', { 'secao-destacada': activeSection === 8 }]"><h5>{{ roleta[8].nome }}</h5></span>
+          <span :class="['font', 'span5', { 'secao-destacada': activeSection === 9 }]"><h5>{{ roleta[9].nome }}</h5></span>
+        </div>
+        <button class="spin" @click="girar()">Girar</button>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
- data() {
-   return {
-	 modalVisivel: true,
-	 roleta: []
-   };
- },
-created(){
-	httpCommon.get("api/Premios")
-			.then((data) => {
-				console.log("Dados carregados", {data});
-				this.roleta = data.data
-			})
-			.catch((error) => {
-				console.log("Erro", error);
-			});
-},
- methods: {
-   girar() {
-	 console.log("Função girar foi chamada");
-	 var box = document.getElementById("box");
-	 var girarDegrees = Math.floor(Math.random() * 360) + 1800;
-	 box.style.transition = "all ease-in-out 5s";
-	 box.style.transform = "rotate(" + girarDegrees + "deg)";
+  data() {
+    return {
+      modalVisivel: true,
+      roleta: [],
+      activeSection: null,
+    };
+  },
+  created() {
+    httpCommon.get("api/Premios")
+      .then((data) => {
+        console.log("Dados carregados", { data });
+        this.roleta = data.data;
+      })
+      .catch((error) => {
+        console.log("Erro", error);
+      });
+  },
+  methods: {
+  girar() {
+    console.log("Função girar foi chamada");
+    const numSetores = this.roleta.length;
+    const premioIndex = Math.floor(Math.random() * numSetores);
+    this.iniciarAnimacao(premioIndex);
+  },
 
-	 setTimeout(() => {
-	   var resultado = this.obterResultado(girarDegrees);
-	   alert("Você ganhou: " + resultado);
-	   this.resetarRoleta();
-	   this.fecharModal();
-	 }, 5500);
-   },
+  iniciarAnimacao(premioIndex) {
+    let currentIndex = 0;
+    const voltasCompletas = 5;
+    const tempoTotal = 6000;
+    const tempoPorSetor = tempoTotal / (voltasCompletas * this.roleta.length + premioIndex);
 
-   obterResultado(girarDegrees) {
-	 var numSetores = 5;
-	 var grausPorSetor = 360 / numSetores;
-	 var offset = 90;
-	 var indiceSetor = Math.floor(
-	   ((girarDegrees + offset) % 360) / grausPorSetor
-	 );
-	 var premios = [
-	   "Parabéns, você ganhou: 10% de desconto",
-	   "Parabéns, você ganhou: 5% de desconto",
-	   "Parabéns, você ganhou: 15% de desconto",
-	   "Parabéns, você ganhou: Chuteira",
-	   "Parabéns, você ganhou: Coringa",
-	   "Parabéns, você ganhou: Camisa Palmeiras",
-	   "Parabéns, você ganhou: Camisa seleção",
-	   "Parabéns, você ganhou: Frete grátis",
-	   "Parabéns, você ganhou: 2 camisas",
-	 ];
+    const interval = setInterval(() => {
+      this.activeSection = currentIndex;
+      currentIndex = (currentIndex + 1) % this.roleta.length;
+    }, tempoPorSetor);
 
-	 var premiosReorganizados = premios.slice(indiceSetor).concat(premios.slice(0, indiceSetor));
+    setTimeout(() => {
+      clearInterval(interval);
+      this.destacarPremio(premioIndex, currentIndex);
+    }, tempoTotal);
+  },
 
-		 return premiosReorganizados[0];
-   },
+  destacarPremio(premioIndex, currentIndex) {
+    const interval = setInterval(() => {
+      this.activeSection = currentIndex;
+      if (currentIndex === premioIndex) {
+        clearInterval(interval);
+        setTimeout(() => {
+          alert("Você ganhou: " + this.roleta[premioIndex].nome);
+          this.resetarRoleta();
+          this.fecharModal();
+        }, 300);
+      } else {
+        currentIndex = (currentIndex + 1) % this.roleta.length;
+      }
+    }, 100);
+  },
 
-   resetarRoleta() {
-	 var box = document.getElementById("box");
-	 box.style.transition = "none";
-	 box.style.transform = "rotate(90deg)";
-   },
-   fecharModal() {
-	   this.modalVisivel = false;
-   }
+  resetarRoleta() {
+    this.activeSection = null;
+  },
+
+  fecharModal() {
+    this.modalVisivel = false;
+  }
  },
 };
 </script>
@@ -109,7 +105,16 @@ created(){
    box-sizing: border-box;
    margin: 0;
    padding: 0;
-   outline: none;
+}
+
+.secao-destacada {
+  position: absolute;
+  border: 9px solid #000000;
+  border-radius: 50%;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  color: rgb(0, 0, 0);
 }
 
 .modal-body {
@@ -145,11 +150,19 @@ created(){
    height: 90%; 
    position: relative;
    border-radius: 50%;
-   border: 10px solid whitesmoke;
+   border: 10px solid rgb(230, 230, 230);
    overflow: hidden;
    transition: all ease-in-out 5s;
    transform: rotate(90deg);
+   color: rgb(0, 0, 0);
 }
+
+.box2 {
+   width: 100%;
+   height: 100%;
+   transform: rotate(180deg);
+} 
+
 
 span {
    width: 100%;
@@ -170,34 +183,17 @@ span {
 
 .span3 {
    clip-path: polygon(30% 0, 71% 0, 50% 50%);
-   background-color: #800080;
+   background-color: #930093;
 }
 
 .span4 {
    clip-path: polygon(71% 0, 100% 18%, 50% 50%);
-   background-color: #FF0000;
+   background-color: #ff2a00;
 }
 
 .span5 {
    clip-path: polygon(100% 18%, 100% 50%, 50% 50%);
    background-color: #FFFF00;
-}
-
-/* .box2 .span3 {
-   background-color: #18f5d0;
-} */
-
-.box2 {
-   width: 100%;
-   height: 100%;
-   transform: rotate(180deg);
-} 
-
-
-
-.font {
-   color: #fff;
-   font-size: 20px;
 }
 
 .box1 .span1 h5 {
@@ -289,7 +285,7 @@ span {
    height: 75px;
    border-radius: 50%;
    border: 4px solid white;
-   background: #1d76e5;
+   background: #e51d1d;
    color: #fff;
    box-shadow: 0 5px 20px #000;
    font-weight: bold;
