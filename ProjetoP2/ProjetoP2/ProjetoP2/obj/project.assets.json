@@ -13314,11 +13314,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\ProjetoP2\\ProjetoP2\\ProjetoP2\\ProjetoP2.csproj",
+      "projectUniqueName": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\ProjetoP2.csproj",
       "projectName": "ProjetoP2",
-      "projectPath": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\ProjetoP2\\ProjetoP2\\ProjetoP2\\ProjetoP2.csproj",
+      "projectPath": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\ProjetoP2.csproj",
       "packagesPath": "C:\\Users\\felip\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\ProjetoP2\\ProjetoP2\\ProjetoP2\\obj\\",
+      "outputPath": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\felip\\AppData\\Roaming\\NuGet\\NuGet.Config",
