@@ -3,6 +3,9 @@ import {ref} from "vue"
 import Roleta from "./components/Roleta.vue"
 import CartSidebar from './components/CartSidebar.vue'
 
+let originalTitle = document.title;
+let blinkInterval;
+
 const mostrarRoleta = ref(false);
 const mostrarCarrinho = ref(false);
 
@@ -31,6 +34,16 @@ const cartItems = ref([
   { name: 'Camisa 3', price: '39.99', image: 'src/assets/images/camisa1.png' }
 ]);
 
+// document.addEventListener('visibilitychange', function() {
+//     if (document.hidden) {
+//         blinkInterval = setInterval(function() {
+//             document.title = document.title === "Ainda está aí?" ? " # " : "Ainda está aí?";
+//         }, 1000);
+//     } else {
+//         clearInterval(blinkInterval); 
+//         document.title = originalTitle;
+//     }
+// });
 
 </script>
 
@@ -56,7 +69,7 @@ const cartItems = ref([
           </li>
         </ul>
         <a href='/login'><button type="button" class="button type1" style="margin-right: 10px;">Entrar</button></a>
-        <a href='/cadastro'><button type="button" class="button type1">Cadastrar</button></a>
+        <a href='/cadastro'><button type="button" class="button type1">Cadastrar-se</button></a>
         <div class="navbar-brand cart" @click="mostrarCarrinho = !mostrarCarrinho">
           <img src="https://www.svgrepo.com/show/530571/conversation.svg" alt="Logo" width="60" height="60" class="d-inline-block align-text-top">
         </div>
@@ -66,8 +79,8 @@ const cartItems = ref([
 <div class="main">
     <Roleta v-if="mostrarRoleta" :show="mostrarRoleta" @update:show="mostrarRoleta = $event"></Roleta>
     <CartSidebar 
-      :show="mostrarCarrinho" 
-      :cartItems="cartItems" 
+      :show="mostrarCarrinho"
+      :cartItems="cartItems"
       @update:show="mostrarCarrinho = $event"
       @cart-closed="handleCartClosed"
       @show-roleta="handleShowRoleta"

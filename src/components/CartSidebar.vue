@@ -113,7 +113,7 @@ right: 0;
 
 .close-btn {
 position: absolute;
-top: 10px;
+top: 7px;
 left: 0px;
 background: none;
 border: none;
@@ -123,10 +123,10 @@ color: red;
 }
 
 .cart-item {
-border-top: 1px solid;
+border-top: 1px solid #ddd;
 display: flex;
 align-items: center;
-margin-bottom: 20px;
+margin-bottom: 14px;
 }
 
 .cart-item img {
@@ -164,7 +164,8 @@ color: grey;
 }
 
 .myCart{
-  margin-top: 40px;
+  margin-top: 0px;
+  margin-left: 15px;
 }
 
 .out {
@@ -176,7 +177,7 @@ color: grey;
   cursor: pointer;
   color: #ea0606;
   background: white;
-  margin-top: 5px;
+  margin-top: 20px;
   font-size: 1.2em;
   font-weight: 550;
   font-family: sans-serif;
@@ -200,16 +201,15 @@ color: grey;
   cursor: pointer;
   color: #0ba403;
   background: white;
-  margin-top: 15px;
+  margin-top: 7px;
   font-size: 1.2em;
   font-weight: 550;
   font-family: sans-serif;
   z-index: 100;
-
 }
 
 .buy:hover {
-  background: #6fc810;
+  background: #0ba403;
   color: white;
   font-size: 1.25em;
   z-index: 100;
