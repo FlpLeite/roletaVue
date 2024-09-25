@@ -8,7 +8,7 @@
       </div>
       <div class="form-group">
         <label for="password">Senha:</label>
-        <input type="password" id="password" v-model="password" required />
+        <input type="password" id="password" v-model="senha" required />
       </div>
       <button type="submit" class="btn btn-primary">Entrar</button>
     </form>
@@ -19,7 +19,7 @@
 
 <script>
 import httpCommon from '@/http-common';
-import router from '@/router'
+import router from '@/router';
 
 export default {
   data() {
@@ -34,22 +34,19 @@ export default {
     async login() {
       this.mensagemErro = '';
       this.mensagemSucesso = '';
-      
+
       const dadosLogin = {
         email: this.email,
         senha: this.senha,
       };
 
       try {
-        const resposta = await httpCommon.get('api/Usuario', dadosLogin);
+        const resposta = await httpCommon.post('api/Usuario/login', dadosLogin);
         if (resposta.status === 200) {
-          this.mensagemSucesso = 'Login realizado com sucesso!';
+          this.mensagemSucesso = 'Login efetuado com sucesso!';
           this.email = '';
           this.senha = '';
-
-          router.push('/')
-        } else {
-          this.mensagemErro = 'Erro ao realizar login. Tente novamente.';
+          router.push('/');
         }
       } catch (erro) {
         if (erro.response && erro.response.data && erro.response.data.message) {
@@ -59,9 +56,9 @@ export default {
         }
         console.error('Erro ao enviar dados de login:', erro);
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>
