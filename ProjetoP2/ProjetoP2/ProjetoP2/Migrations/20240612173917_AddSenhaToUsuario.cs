@@ -4,10 +4,8 @@
 
 namespace ProjetoP2.Migrations
 {
-    /// <inheritdoc />
     public partial class AddSenhaToUsuario : Migration
     {
-        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
@@ -17,7 +15,6 @@ namespace ProjetoP2.Migrations
                 nullable: false);
         }
 
-        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
