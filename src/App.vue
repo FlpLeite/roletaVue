@@ -34,16 +34,16 @@ const cartItems = ref([
   { name: 'Camisa 3', price: '39.99', image: 'src/assets/images/camisa1.png' }
 ]);
 
-// document.addEventListener('visibilitychange', function() {
-//     if (document.hidden) {
-//         blinkInterval = setInterval(function() {
-//             document.title = document.title === "Ainda está aí?" ? " # " : "Ainda está aí?";
-//         }, 1000);
-//     } else {
-//         clearInterval(blinkInterval); 
-//         document.title = originalTitle;
-//     }
-// });
+document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+        blinkInterval = setInterval(function() {
+            document.title = document.title === "Ainda está aí?" ? " ‎  " : "Ainda está aí?";
+        }, 1000);
+    } else {
+        clearInterval(blinkInterval); 
+        document.title = originalTitle;
+    }
+});
 
 </script>
 

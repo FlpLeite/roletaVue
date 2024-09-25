@@ -20,9 +20,6 @@
         <p v-if="discount > 0">Desconto: <span>{{ discount }}%</span></p>
         <p v-if="discount > 0">Total com desconto: <span>{{ formatCurrency(totalWithDiscount) }}</span></p>
       </div>
-
-      
-
     </div>
     <div v-else>
       <p>Seu carrinho está vazio.</p>
