@@ -20,7 +20,10 @@ These or higher versions are required.
 ## Installation Instructions
 
 ### Front-end
+Dowload and install [Noje.js](https://nodejs.org/en/download/package-manager/current) 21.7.2 or higher
+Follow instructions on official website.
 
+#### In the project folder, run:
 ```sh
 npm install
 ```
@@ -55,12 +58,20 @@ npm run dev
 ```sh
 dotnet add package Swashbuckle.AspNetCore
 ```
+5. *Install tool required*
+```
+dotnet tool install --global dotnet-ef
+```
 
 5. *Running the Back-end:*  
    To start the API, use the command:
    ```sh
-   dotnet run
+   dotnet ef dbcontext scaffold "Server={SeuServer};User Id=root;Password={SuaSenha};Database={SeuBD}" "Pomelo.EntityFrameworkCore.MySql" -c {SeuDominio}DbContext
    ```
+   ```sh
+   dotnet ef database update
+   ```
+
    This will run the server on localhost at the configured port.
 
 ### Back-end Dependencies:
