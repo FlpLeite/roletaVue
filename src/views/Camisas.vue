@@ -5,7 +5,6 @@
 <template>
   <main>
     <div class="container">
-      <!-- Frase de apresentação -->
       <div class="row mt-4">
         <div class="col-12 text-center">
           <h1 class="presentation">Descubra sua camisa perfeita com estilo e conforto para qualquer ocasião!</h1>
@@ -13,13 +12,12 @@
       </div>
 
       <div class="row mt-4">
-        <!-- Primeira fileira de camisas -->
         <div class="col-sm-6 col-md-4">
           <div class="card border-0">
             <div class="card-body row">
+              <p class="description">Camisa Masculina Casual</p>
               <img src="../assets/images/camisa1.png" alt="Camisa 1">
               <p class="price"><b>$20</b></p>
-              <p class="description">Camisa Masculina Casual</p>
             </div>
           </div>
         </div>
@@ -37,14 +35,13 @@
         <div class="col-sm-6 col-md-4">
           <div class="card border-0">
             <div class="card-body row">
+              <p class="description">Camisa Masculina Esporte</p>
               <img src="../assets/images/camisa1.png" alt="Camisa 3">
               <p class="price"><b>$39.99</b></p>
-              <p class="description">Camisa Masculina Esporte</p>
             </div>
           </div>
         </div>
 
-        <!-- Segunda fileira de camisas -->
         <div class="col-sm-6 col-md-4">
           <div class="card border-0">
             <div class="card-body row">
