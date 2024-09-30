@@ -9,19 +9,11 @@ let blinkInterval;
 const mostrarRoleta = ref(false);
 const mostrarCarrinho = ref(false);
 
-const aparecerRoleta = () => {
-  mostrarRoleta.value = !mostrarRoleta.value;
-};
 
 const handleCartClosed = () => {
   mostrarCarrinho.value = false;
   mostrarRoleta.value = false;
 };
-
-const handleCartToggle = () => {
-  mostrarCarrinho.value = false;
-  mostrarRoleta.value = true;
-}
 
 const handleShowRoleta = () => {
   mostrarRoleta.value = true;
@@ -56,7 +48,7 @@ document.addEventListener('visibilitychange', function() {
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Camisas</a>
+            <a class="nav-link" aria-current="page" href="/camisas">Camisas</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -88,9 +80,6 @@ document.addEventListener('visibilitychange', function() {
     <router-view></router-view>
 </div>
 
-
-  
- 
 </template>
 
 <style>
@@ -98,6 +87,7 @@ document.addEventListener('visibilitychange', function() {
     position: fixed;
     top: 0;
     width: 100%;
+    height: 15.8%;
     z-index: 10;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }

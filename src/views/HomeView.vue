@@ -1,167 +1,60 @@
-<script setup>
-
-</script>
-
 <template>
-  <main>
-    <div class="container">
-      <div class="row mt-4">
-        <div class="col-sm-6 col-md-3">
-          <div class="card border-0">
-            <div class="card-body row">
-              <img src="../assets/images/camisa1.png" alt="">
-              <p class="price"><b>$20</b></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="card border-0">
-            <div class="card-body row">
-              <img src="../assets/images/camisa3.png" alt="">
-              <p class="price"><b>$25.99</b></p>
-            </div>
-            
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="card border-0">
-            <div class="card-body row">
-              <img src="../assets/images/camisa1.png" alt="">
-              <p class="price"><b>$39.99</b></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="card border-0">
-            <div class="card-body row">
-              <img src="../assets/images/camisa3.png" alt="">
-              <p class="price"><b>$29.99</b></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="card border-0">
-            <div class="card-body row">
-              <img src="../assets/images/camisa3.png" alt="">
-              <p class="price"><b>$29.99</b></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="card border-0">
-            <div class="card-body row">
-              <img src="../assets/images/camisa1.png" alt="">
-              <p class="price"><b>$29.99</b></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="card border-0">
-            <div class="card-body row">
-              <img src="../assets/images/camisa3.png" alt="">
-              <p class="price"><b>$29.99</b></p>
-            </div>
-          </div>
-        </div><div class="col-sm-6 col-md-3">
-          <div class="card border-0">
-            <div class="card-body row">
-              <img src="../assets/images/camisa1.png" alt="">
-              <p class="price"><b>$29.99</b></p>
-            </div>
-          </div>
-        </div>
-      </div>
+  <img src="../assets/images/Banner.webp" alt="Banner" class="banner">
+  
+  <div class="card-products">
+    <div class="cards">
+      <a href="/camisas">
+        <img src="https://images.tcdn.com.br/files/311840/themes/4611/img/settings/fadrfd.jpg?debd50ed44399ba4e0d38d8599143a5b" href='/camisas' alt="Chuteira Infantil" class="product-image">
+      </a>
     </div>
-  </main>
-</template>
 
+    <div class="cards">
+      <a href="/camisas">
+        <img src="https://images.tcdn.com.br/files/311840/themes/4611/img/settings/tenis-infantil.jpg?debd50ed44399ba4e0d38d8599143a5b" href='/camisas' alt="Tênis Infantil" class="product-image">
+      </a>
+    </div>
+
+    <div class="cards">
+      <a href="/camisas">
+        <img src="https://images.tcdn.com.br/files/311840/themes/4611/img/settings/440x210-topo-3.jpg?debd50ed44399ba4e0d38d8599143a5b" href='/camisas' alt="Pequeno Fanático" class="product-image">
+      </a>  
+      </div>
+  </div>
+</template>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Jersey+20+Charted&display=swap');
-  
-  .desconto {
-    color: whitesmoke;
+
+  .banner {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .card-products {
     display: flex;
-    border-radius: 20px;
-    background-color: blue;
     justify-content: center;
+    gap: 10px;
+    margin: 0 10px;
   }
 
-  b {
-    font-size: x-large;
-    color: rgb(6, 50, 107);
+  .cards {
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: 32%;
+    overflow: hidden;
   }
 
-  .price {
-    font-size: larger;
+  .product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
   }
 
-  .card {
-    position: relative;
-    box-shadow: 0px 1px 13px rgba(0,0,0,0.4);
-    cursor: pointer;
-    transition: all 120ms;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    padding: 0.5em;
-    padding-bottom: 3.4em;
-    margin-bottom: 100px;
-  }
-
-  .card::after {
-    content: "Adicionar ao carrinho";
-    padding-top: 20px;
-    padding-left: 20px;
-    position: absolute;
-    left: 0;
-    bottom: -60px;
-    background: #00ca5b;
-    color: #fff;
-    height: 65px;
-    width: 100%;
-    transition: all 200ms;
-    font-weight: 600;
-    text-transform: uppercase;
-    opacity: 0;
-  }
-
-  .card .title {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.9em;
-    position: absolute;
-    left: 0.625em;
-    bottom: 1.875em;
-    font-weight: 400;
-    color: #000;
-  }
-
-  .card .price {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 0.9em;
-    position: absolute;
-    left: 0.625em;
-    bottom: 0.625em;
-    color: #000;
-  }
-
-  .card:hover::after {
-    bottom: 0;
-    opacity: 10;
-  }
-
-  .card:active {
-    transform: scale(0.99);
-  }
-
-  .card:active::after {
-    content: "Adicionado !";
-    height: 3.6em;
-  }
-
-  .text {
-    max-width: 55px;
+  .cards:hover .product-image {
+    transform: scale(1.03);
   }
 
 </style>
