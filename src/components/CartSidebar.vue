@@ -143,7 +143,6 @@ margin: 0;
 
 .cart-item p {
 margin: 0;
-color: grey;
 }
 
 .cart-total {
