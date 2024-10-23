@@ -90,6 +90,12 @@ export default {
       }, 100);
    },
 
+   aplicarDesconto (desconto){
+      console.log("Desconto sendo aplicado na roleta", { valor: desconto });
+      const event = new CustomEvent('aplicar-desconto', { detail: desconto });
+      window.dispatchEvent(event);
+   },
+
    resetarRoleta() {
       this.activeSection = null;
    },
