@@ -1,6 +1,7 @@
 <template>
-  <img src="../assets/images/Banner.webp" alt="Banner" class="banner">
-  
+  <a href="/camisas">
+    <img src="../assets/images/banner.png" alt="Banner" class="banner">
+  </a>
   <div class="card-products">
     <div class="cards">
       <a href="/camisas">
@@ -28,7 +29,7 @@
   .banner {
     max-width: 100%;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .card-products {
@@ -39,7 +40,7 @@
   }
 
   .cards {
-    padding: 15px;
+    padding: 10px;
     border-radius: 10px;
     text-align: center;
     width: 32%;

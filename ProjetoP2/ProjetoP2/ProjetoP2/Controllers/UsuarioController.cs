@@ -3,8 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProjetoP2.Contexto;
 using ProjetoP2.Models;
-using System.Linq;
-using System.Collections.Generic;
 
 namespace ProjetoP2.Controllers
 {
@@ -75,30 +73,6 @@ namespace ProjetoP2.Controllers
             _context.SaveChanges();
 
             return NoContent();
-        }
-
-        [HttpPost("login")]
-        public ActionResult Login([FromBody] LoginRequest request)
-        {
-            if (string.IsNullOrWhiteSpace(request.Email) || string.IsNullOrWhiteSpace(request.Senha))
-            {
-                return BadRequest(new { message = "Email e senha são obrigatórios." });
-            }
-
-            var user = _context.Usuarios
-                .FirstOrDefault(u => u.Email == request.Email);
-
-            if (user == null)
-            {
-                return Unauthorized(new { message = "Email não encontrado." });
-            }
-
-            if (user.Senha != request.Senha)
-            {
-                return Unauthorized(new { message = "Senha incorreta." });
-            }
-
-            return Ok(new { message = "Login bem-sucedido", user });
         }
     }
 }

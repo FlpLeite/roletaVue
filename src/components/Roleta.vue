@@ -5,7 +5,6 @@ import httpCommon from '@/http-common';
 <template>
   <div v-if="modalVisivel" class="modal-body">
     <div class="mainbox" id="mainbox">
-      <div class="seta"></div>
       <div class="box" id="box">
         <div class="box1">
           <span :class="['font', 'span1', { 'secao-destacada': activeSection === 0 }]"><h5>{{ roleta[0].nome }}</h5></span>
@@ -21,7 +20,7 @@ import httpCommon from '@/http-common';
           <span :class="['font', 'span4', { 'secao-destacada': activeSection === 8 }]"><h5>{{ roleta[8].nome }}</h5></span>
           <span :class="['font', 'span5', { 'secao-destacada': activeSection === 9 }]"><h5>{{ roleta[9].nome }}</h5></span>
         </div>
-        <button class="spin" @click="girar()">Girar</button>
+        <button class="spin" @click="girar()":disabled="botaoDisabled">GIRAR</button>
       </div>
     </div>
   </div>
@@ -31,6 +30,7 @@ import httpCommon from '@/http-common';
 export default {
   data() {
     return {
+      botaoDisabled: false,
       modalVisivel: true,
       roleta: [],
       activeSection: null,
@@ -47,53 +47,56 @@ export default {
       });
   },
   methods: {
-  girar() {
-    console.log("Função girar foi chamada");
-    const numSetores = this.roleta.length;
-    const premioIndex = Math.floor(Math.random() * numSetores);
-    this.iniciarAnimacao(premioIndex);
-  },
+   girar() {
+      console.log("Função girar foi chamada");
+      const numSetores = this.roleta.length;
+      const premioIndex = Math.floor(Math.random() * numSetores);
+      this.iniciarAnimacao(premioIndex);
+      this.botaoDisabled = true;
+   },
 
-  iniciarAnimacao(premioIndex) {
-    let currentIndex = 0;
-    const voltasCompletas = 5;
-    const tempoTotal = 6000;
-    const tempoPorSetor = tempoTotal / (voltasCompletas * this.roleta.length + premioIndex);
+   iniciarAnimacao(premioIndex) {
+      let currentIndex = 0;
+      const voltasCompletas = 10;
+      const tempoTotal = 6000;
+      const tempoPorSetor = tempoTotal / (voltasCompletas * this.roleta.length + premioIndex);
 
-    const interval = setInterval(() => {
-      this.activeSection = currentIndex;
-      currentIndex = (currentIndex + 1) % this.roleta.length;
-    }, tempoPorSetor);
+      const interval = setInterval(() => {
+         this.activeSection = currentIndex;
+         currentIndex = (currentIndex + 1) % this.roleta.length;
+      }, tempoPorSetor);
 
-    setTimeout(() => {
-      clearInterval(interval);
-      this.destacarPremio(premioIndex, currentIndex);
-    }, tempoTotal);
-  },
+      setTimeout(() => {
+         clearInterval(interval);
+         this.destacarPremio(premioIndex, currentIndex);
+      }, tempoTotal);
+   },
 
-  destacarPremio(premioIndex, currentIndex) {
-    const interval = setInterval(() => {
-      this.activeSection = currentIndex;
-      if (currentIndex === premioIndex) {
-        clearInterval(interval);
-        setTimeout(() => {
-          alert("Você ganhou: " + this.roleta[premioIndex].nome);
-          this.resetarRoleta();
-          this.fecharModal();
-        }, 300);
-      } else {
-        currentIndex = (currentIndex + 1) % this.roleta.length;
-      }
-    }, 100);
-  },
+   destacarPremio(premioIndex, currentIndex) {
+      let delay = 10000; 
+      const interval = setInterval(() => {
+         this.activeSection = currentIndex;
+         if (currentIndex === premioIndex) {
+         clearInterval(interval);
+         setTimeout(() => {
+            alert("Você ganhou: " + this.roleta[premioIndex].nome);
+            this.resetarRoleta();
+            this.fecharModal();
+         }, 300);
+         } else {
+         currentIndex = (currentIndex + 1) % this.roleta.length;
+         delay +=100000000
+         }
+      }, 100);
+   },
 
-  resetarRoleta() {
-    this.activeSection = null;
-  },
+   resetarRoleta() {
+      this.activeSection = null;
+   },
 
-  fecharModal() {
-    this.modalVisivel = false;
-  }
+   fecharModal() {
+      this.modalVisivel = false;
+   }
  },
 };
 </script>
@@ -102,19 +105,18 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jacquard+12+Charted&display=swap');
 
 * {
-   box-sizing: border-box;
    margin: 0;
    padding: 0;
 }
 
 .secao-destacada {
   position: absolute;
-  border: 9px solid #000000;
+  border: 9px solid #FFD700;
   border-radius: 50%;
   z-index: 1;
   width: 100%;
   height: 100%;
-  color: rgb(0, 0, 0);
+  color: #FFD700;
 }
 
 .modal-body {
@@ -126,6 +128,12 @@ export default {
    overflow: hidden;
    background-size: cover;
    background-position: center;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }
 
 .mainbox {
@@ -153,7 +161,6 @@ export default {
    border: 10px solid rgb(230, 230, 230);
    overflow: hidden;
    transition: all ease-in-out 5s;
-   transform: rotate(90deg);
    color: rgb(0, 0, 0);
 }
 
@@ -193,7 +200,7 @@ span {
 
 .span5 {
    clip-path: polygon(100% 18%, 100% 50%, 50% 50%);
-   background-color: #FFFF00;
+   background-color: #ff8000;
 }
 
 .box1 .span1 h5 {
@@ -281,15 +288,15 @@ span {
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
-   width: 75px;
-   height: 75px;
+   width: 80px;
+   height: 80px;
    border-radius: 50%;
-   border: 4px solid white;
+   border: 4px solid #000;
    background: #e51d1d;
-   color: #fff;
-   box-shadow: 0 5px 20px #000;
+   color: #000;
+   box-shadow: 0 3px 15px #000;
    font-weight: bold;
-   font-size: 22px;
+   font-size: 18px;
    cursor: pointer;
    z-index: 10000;
 }
@@ -297,7 +304,10 @@ span {
 .spin:active{
    width: 70px;
    height: 70px;
-   font-size: 20px;
+   font-size: 15px;
 }
 
+.spin:disabled {
+   cursor: not-allowed;
+}
 </style>
