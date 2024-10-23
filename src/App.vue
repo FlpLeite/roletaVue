@@ -5,28 +5,25 @@ import CartSidebar from './components/CartSidebar.vue'
 
 let originalTitle = document.title;
 let blinkInterval;
+let roletaTimeout;
 
 const mostrarRoleta = ref(false);
 const mostrarCarrinho = ref(false);
 
-const aparecerRoleta = () => {
-  mostrarRoleta.value = !mostrarRoleta.value;
-};
 
 const handleCartClosed = () => {
   mostrarCarrinho.value = false;
   mostrarRoleta.value = false;
 };
 
-const handleCartToggle = () => {
+const handleShowRoleta = () => {
   mostrarCarrinho.value = false;
   mostrarRoleta.value = true;
 }
 
-const handleShowRoleta = () => {
-  mostrarRoleta.value = true;
-}
-
+const toggleCart = () => {
+  mostrarCarrinho.value = !mostrarCarrinho.value;
+};
 
 const cartItems = ref([
   { name: 'Camisa 1', price: '29.99', image: 'src/assets/images/camisa1.png' },
@@ -34,16 +31,21 @@ const cartItems = ref([
   { name: 'Camisa 3', price: '39.99', image: 'src/assets/images/camisa1.png' }
 ]);
 
-// document.addEventListener('visibilitychange', function() {
-//     if (document.hidden) {
-//         blinkInterval = setInterval(function() {
-//             document.title = document.title === "Ainda está aí?" ? " # " : "Ainda está aí?";
-//         }, 1000);
-//     } else {
-//         clearInterval(blinkInterval); 
-//         document.title = originalTitle;
-//     }
-// });
+document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+        blinkInterval = setInterval(function() {
+            document.title = document.title === "Ainda está aí?" ? " ‎  " : "Ainda está aí?";
+        }, 1000);
+        
+        roletaTimeout = setTimeout(() => {
+            mostrarRoleta.value = true; 
+        }, 30000); 
+    } else {
+        clearInterval(blinkInterval);
+        clearTimeout(roletaTimeout); 
+        document.title = originalTitle;
+    }
+});
 
 </script>
 
@@ -56,7 +58,7 @@ const cartItems = ref([
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Camisas</a>
+            <a class="nav-link" aria-current="page" href="/camisas">Camisas</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -70,27 +72,22 @@ const cartItems = ref([
         </ul>
         <a href='/login'><button type="button" class="button type1" style="margin-right: 10px;">Entrar</button></a>
         <a href='/cadastro'><button type="button" class="button type1">Cadastrar-se</button></a>
-        <div class="navbar-brand cart" @click="mostrarCarrinho = !mostrarCarrinho">
+        <div class="navbar-brand cart" @click="toggleCart">
           <img src="https://www.svgrepo.com/show/530571/conversation.svg" alt="Logo" width="60" height="60" class="d-inline-block align-text-top">
         </div>
       </div>
     </div>
 </nav>
 <div class="main">
-    <Roleta v-if="mostrarRoleta" :show="mostrarRoleta" @update:show="mostrarRoleta = $event"></Roleta>
+    <Roleta v-if="mostrarRoleta" v-model:show="mostrarRoleta"></Roleta>
     <CartSidebar 
-      :show="mostrarCarrinho"
+      v-model:show="mostrarCarrinho"
       :cartItems="cartItems"
-      @update:show="mostrarCarrinho = $event"
       @cart-closed="handleCartClosed"
       @show-roleta="handleShowRoleta"
     />
     <router-view></router-view>
 </div>
-
-
-  
- 
 </template>
 
 <style>
@@ -98,6 +95,7 @@ const cartItems = ref([
     position: fixed;
     top: 0;
     width: 100%;
+    height: 15.8%;
     z-index: 10;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }

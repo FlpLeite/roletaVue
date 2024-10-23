@@ -28,9 +28,6 @@
       <p>Seu carrinho está vazio.</p>
     </div>
     <footer>
-      <button class="out" @click="handleCartToggle">
-        Abandonar carrinho
-      </button>
       <button class="buy">
         Finalizar compra
       </button>
@@ -166,30 +163,6 @@ color: grey;
 .myCart{
   margin-top: 0px;
   margin-left: 15px;
-}
-
-.out {
-  width: 250px;
-  height: 45px;
-  border: 3px solid #ea0606;
-  border-radius: 45px;
-  transition: all 0.3s;
-  cursor: pointer;
-  color: #ea0606;
-  background: white;
-  margin-top: 20px;
-  font-size: 1.2em;
-  font-weight: 550;
-  font-family: sans-serif;
-  z-index: 100;
-}
-
-.out:hover {
-  background: #ea0606;
-  color: white;
-  font-size: 1.25em;
-  z-index: 100;
-
 }
 
 .buy {
