@@ -36,7 +36,7 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits, computed } from 'vue';
+import { defineProps, defineEmits, computed, onMounted } from 'vue';
 
 const props = defineProps({
   show: Boolean,
@@ -68,24 +68,27 @@ const total = computed(() => {
 
 const totalWithDiscount = computed(() => {
   const subtotal = total.value;
-  if (props.discount > 0) {
-    return subtotal - (subtotal * (props.discount / 100));
+  if (discount.value > 0) {
+    return subtotal - (subtotal * (discount.value / 100));
   }
   return subtotal;
 });
-
-const handleCartToggle = () => {
-  const confirmar = window.confirm("Realmente deseja abandonar o carrinho?");
-  if (confirmar) {
-    emit('update:show', false);
-    emit('show-roleta');
-  }
-};
 
 const handleCartClosed = () => {
   emit('update:show', false);
   emit('cart-closed');
 };
+
+const aplicarDesconto = (valorDesconto) => {
+  console.log('Aplicando desconto:', valorDesconto);
+  discount.value = valorDesconto;
+};
+
+onMounted(() => {
+  window.addEventListener('aplicar-desconto', (event) => {
+    aplicarDesconto(event.detail);
+  });
+});
 </script>
 
 
