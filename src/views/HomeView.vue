@@ -1,6 +1,6 @@
 <template>
   <a href="/camisas">
-    <img src="../assets/images/Banner.webp" alt="Banner" class="banner">
+    <img src="../assets/images/banner.png" alt="Banner" class="banner">
   </a>
   <div class="card-products">
     <div class="cards">
