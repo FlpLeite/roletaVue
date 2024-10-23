@@ -58,8 +58,24 @@
       "DocumentGroups": [
         {
           "DockedHeight": 144,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 9,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:5:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -70,12 +86,7 @@
               "RelativeToolTip": "ProjetoP2\\Migrations\\RoletaContextMySQLModelSnapshot.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-22T21:19:15.533Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+              "WhenOpened": "2024-09-22T21:19:15.533Z"
             },
             {
               "$type": "Document",
@@ -87,8 +98,7 @@
               "RelativeToolTip": "ProjetoP2\\Migrations\\20240612173917_AddSenhaToUsuario.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T17:39:17.772Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-12T17:39:17.772Z"
             },
             {
               "$type": "Document",
@@ -112,8 +122,7 @@
               "RelativeToolTip": "ProjetoP2\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T23:42:05.908Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-07T23:42:05.908Z"
             },
             {
               "$type": "Document",
@@ -125,8 +134,7 @@
               "RelativeToolTip": "ProjetoP2\\Migrations\\20240606010439_inicial.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAxwAkAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T00:11:53.912Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-12T00:11:53.912Z"
             },
             {
               "$type": "Document",
@@ -136,7 +144,7 @@
               "RelativeDocumentMoniker": "ProjetoP2\\Controllers\\UsuarioController.cs",
               "ToolTip": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\Controllers\\UsuarioController.cs",
               "RelativeToolTip": "ProjetoP2\\Controllers\\UsuarioController.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAAAswFUAAAAdAAAA",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAswFUAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-07T23:42:05.908Z",
               "EditorCaption": ""

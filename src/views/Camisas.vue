@@ -25,9 +25,9 @@
         <div class="col-sm-6 col-md-4">
           <div class="card border-0">
             <div class="card-body row">
+              <p class="description">Camisa Feminina Treino</p>
               <img src="../assets/images/camisa3.png" alt="Camisa 2">
               <p class="price"><b>$25.99</b></p>
-              <p class="description">Camisa Feminina Treino</p>
             </div>
           </div>
         </div>
@@ -45,9 +45,9 @@
         <div class="col-sm-6 col-md-4">
           <div class="card border-0">
             <div class="card-body row">
+              <p class="description">Camisa Feminina Esporte</p>
               <img src="../assets/images/camisa3.png" alt="Camisa 4">
               <p class="price"><b>$29.99</b></p>
-              <p class="description">Camisa Feminina Esporte</p>
             </div>
           </div>
         </div>
@@ -55,9 +55,9 @@
         <div class="col-sm-6 col-md-4">
           <div class="card border-0">
             <div class="card-body row">
+              <p class="description">Camisa Feminina Treino</p>
               <img src="../assets/images/camisa1.png" alt="Camisa 5">
               <p class="price"><b>$29.99</b></p>
-              <p class="description">Camisa Feminina Treino</p>
             </div>
           </div>
         </div>
@@ -65,9 +65,9 @@
         <div class="col-sm-6 col-md-4">
           <div class="card border-0">
             <div class="card-body row">
+              <p class="description">Camisa Masculina Casual</p>
               <img src="../assets/images/camisa3.png" alt="Camisa 6">
               <p class="price"><b>$29.99</b></p>
-              <p class="description">Camisa Masculina Casual</p>
             </div>
           </div>
         </div>
