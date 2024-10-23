@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B4B47CB4-8512-4D45-B5F7-EA5A8878FDC7}|ProjetoP2\\ProjetoP2.csproj|c:\\users\\felip\\onedrive\\documentos\\terceirosemestreads\\roleta\\roletavue\\projetop2\\projetop2\\projetop2\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4B47CB4-8512-4D45-B5F7-EA5A8878FDC7}|ProjetoP2\\ProjetoP2.csproj|solutionrelative:projetop2\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4B47CB4-8512-4D45-B5F7-EA5A8878FDC7}|ProjetoP2\\ProjetoP2.csproj|c:\\users\\felip\\onedrive\\documentos\\terceirosemestreads\\roleta\\roletavue\\projetop2\\projetop2\\projetop2\\migrations\\20240606010439_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4B47CB4-8512-4D45-B5F7-EA5A8878FDC7}|ProjetoP2\\ProjetoP2.csproj|solutionrelative:projetop2\\migrations\\20240606010439_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4B47CB4-8512-4D45-B5F7-EA5A8878FDC7}|ProjetoP2\\ProjetoP2.csproj|c:\\users\\felip\\onedrive\\documentos\\terceirosemestreads\\roleta\\roletavue\\projetop2\\projetop2\\projetop2\\migrations\\roletacontextmysqlmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4B47CB4-8512-4D45-B5F7-EA5A8878FDC7}|ProjetoP2\\ProjetoP2.csproj|solutionrelative:projetop2\\migrations\\roletacontextmysqlmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4B47CB4-8512-4D45-B5F7-EA5A8878FDC7}|ProjetoP2\\ProjetoP2.csproj|c:\\users\\felip\\onedrive\\documentos\\terceirosemestreads\\roleta\\roletavue\\projetop2\\projetop2\\projetop2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4B47CB4-8512-4D45-B5F7-EA5A8878FDC7}|ProjetoP2\\ProjetoP2.csproj|solutionrelative:projetop2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B4B47CB4-8512-4D45-B5F7-EA5A8878FDC7}|ProjetoP2\\ProjetoP2.csproj|c:\\users\\felip\\onedrive\\documentos\\terceirosemestreads\\roleta\\roletavue\\projetop2\\projetop2\\projetop2\\migrations\\20240612173917_addsenhatousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B4B47CB4-8512-4D45-B5F7-EA5A8878FDC7}|ProjetoP2\\ProjetoP2.csproj|solutionrelative:projetop2\\migrations\\20240612173917_addsenhatousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4B47CB4-8512-4D45-B5F7-EA5A8878FDC7}|ProjetoP2\\ProjetoP2.csproj|c:\\users\\felip\\onedrive\\documentos\\terceirosemestreads\\roleta\\roletavue\\projetop2\\projetop2\\projetop2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4B47CB4-8512-4D45-B5F7-EA5A8878FDC7}|ProjetoP2\\ProjetoP2.csproj|solutionrelative:projetop2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B4B47CB4-8512-4D45-B5F7-EA5A8878FDC7}|ProjetoP2\\ProjetoP2.csproj|c:\\users\\felip\\onedrive\\documentos\\terceirosemestreads\\roleta\\roletavue\\projetop2\\projetop2\\projetop2\\controllers\\premioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,6 +17,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{B4B47CB4-8512-4D45-B5F7-EA5A8878FDC7}|ProjetoP2\\ProjetoP2.csproj|c:\\users\\felip\\onedrive\\documentos\\terceirosemestreads\\roleta\\roletavue\\projetop2\\projetop2\\projetop2\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B4B47CB4-8512-4D45-B5F7-EA5A8878FDC7}|ProjetoP2\\ProjetoP2.csproj|solutionrelative:projetop2\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4B47CB4-8512-4D45-B5F7-EA5A8878FDC7}|ProjetoP2\\ProjetoP2.csproj|c:\\users\\felip\\onedrive\\documentos\\terceirosemestreads\\roleta\\roletavue\\projetop2\\projetop2\\projetop2\\migrations\\20240606010439_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4B47CB4-8512-4D45-B5F7-EA5A8878FDC7}|ProjetoP2\\ProjetoP2.csproj|solutionrelative:projetop2\\migrations\\20240606010439_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4B47CB4-8512-4D45-B5F7-EA5A8878FDC7}|ProjetoP2\\ProjetoP2.csproj|c:\\users\\felip\\onedrive\\documentos\\terceirosemestreads\\roleta\\roletavue\\projetop2\\projetop2\\projetop2\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4B47CB4-8512-4D45-B5F7-EA5A8878FDC7}|ProjetoP2\\ProjetoP2.csproj|solutionrelative:projetop2\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B4B47CB4-8512-4D45-B5F7-EA5A8878FDC7}|ProjetoP2\\ProjetoP2.csproj|c:\\users\\felip\\onedrive\\documentos\\terceirosemestreads\\roleta\\roletavue\\projetop2\\projetop2\\projetop2\\contexto\\roletacontextmysql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,100 +54,27 @@
       "DocumentGroups": [
         {
           "DockedHeight": 144,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:5:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RoletaContextMySQLModelSnapshot.cs",
-              "DocumentMoniker": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\Migrations\\RoletaContextMySQLModelSnapshot.cs",
-              "RelativeDocumentMoniker": "ProjetoP2\\Migrations\\RoletaContextMySQLModelSnapshot.cs",
-              "ToolTip": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\Migrations\\RoletaContextMySQLModelSnapshot.cs",
-              "RelativeToolTip": "ProjetoP2\\Migrations\\RoletaContextMySQLModelSnapshot.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-22T21:19:15.533Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "20240612173917_AddSenhaToUsuario.cs",
               "DocumentMoniker": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\Migrations\\20240612173917_AddSenhaToUsuario.cs",
               "RelativeDocumentMoniker": "ProjetoP2\\Migrations\\20240612173917_AddSenhaToUsuario.cs",
               "ToolTip": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\Migrations\\20240612173917_AddSenhaToUsuario.cs",
               "RelativeToolTip": "ProjetoP2\\Migrations\\20240612173917_AddSenhaToUsuario.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-12T17:39:17.772Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\Models\\Usuario.cs",
-              "RelativeDocumentMoniker": "ProjetoP2\\Models\\Usuario.cs",
-              "ToolTip": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\Models\\Usuario.cs",
-              "RelativeToolTip": "ProjetoP2\\Models\\Usuario.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T23:42:05.916Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\Program.cs",
-              "RelativeDocumentMoniker": "ProjetoP2\\Program.cs",
-              "ToolTip": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\Program.cs",
-              "RelativeToolTip": "ProjetoP2\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T23:42:05.908Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "20240606010439_inicial.cs",
-              "DocumentMoniker": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\Migrations\\20240606010439_inicial.cs",
-              "RelativeDocumentMoniker": "ProjetoP2\\Migrations\\20240606010439_inicial.cs",
-              "ToolTip": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\Migrations\\20240606010439_inicial.cs",
-              "RelativeToolTip": "ProjetoP2\\Migrations\\20240606010439_inicial.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAxwAkAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T00:11:53.912Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UsuarioController.cs",
-              "DocumentMoniker": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\Controllers\\UsuarioController.cs",
-              "RelativeDocumentMoniker": "ProjetoP2\\Controllers\\UsuarioController.cs",
-              "ToolTip": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\Controllers\\UsuarioController.cs",
-              "RelativeToolTip": "ProjetoP2\\Controllers\\UsuarioController.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAAAswFUAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T23:42:05.908Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "PremiosController.cs",
               "DocumentMoniker": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\Controllers\\PremiosController.cs",
               "RelativeDocumentMoniker": "ProjetoP2\\Controllers\\PremiosController.cs",
@@ -163,7 +86,56 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "ProjetoP2\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\Models\\Usuario.cs",
+              "RelativeToolTip": "ProjetoP2\\Models\\Usuario.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T23:42:05.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\Program.cs",
+              "RelativeDocumentMoniker": "ProjetoP2\\Program.cs",
+              "ToolTip": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\Program.cs",
+              "RelativeToolTip": "ProjetoP2\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T23:42:05.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20240606010439_inicial.cs",
+              "DocumentMoniker": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\Migrations\\20240606010439_inicial.cs",
+              "RelativeDocumentMoniker": "ProjetoP2\\Migrations\\20240606010439_inicial.cs",
+              "ToolTip": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\Migrations\\20240606010439_inicial.cs",
+              "RelativeToolTip": "ProjetoP2\\Migrations\\20240606010439_inicial.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwAkAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T00:11:53.912Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "ProjetoP2\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "ProjetoP2\\Controllers\\UsuarioController.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAAgwEIAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T23:42:05.908Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "RoletaContextMySQL.cs",
               "DocumentMoniker": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\Contexto\\RoletaContextMySQL.cs",
               "RelativeDocumentMoniker": "ProjetoP2\\Contexto\\RoletaContextMySQL.cs",
@@ -175,7 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "Premio.cs",
               "DocumentMoniker": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\Models\\Premio.cs",
               "RelativeDocumentMoniker": "ProjetoP2\\Models\\Premio.cs",
@@ -187,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\appsettings.Development.json",
               "RelativeDocumentMoniker": "ProjetoP2\\appsettings.Development.json",
@@ -199,7 +171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "ProjetoP2.csproj",
               "DocumentMoniker": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\ProjetoP2.csproj",
               "RelativeDocumentMoniker": "ProjetoP2\\ProjetoP2.csproj",
@@ -211,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\felip\\OneDrive\\Documentos\\terceiroSemestreADS\\Roleta\\roletaVue\\ProjetoP2\\ProjetoP2\\ProjetoP2\\appsettings.json",
               "RelativeDocumentMoniker": "ProjetoP2\\appsettings.json",
