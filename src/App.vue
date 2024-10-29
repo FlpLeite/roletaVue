@@ -39,7 +39,7 @@ document.addEventListener('visibilitychange', function() {
         
         roletaTimeout = setTimeout(() => {
             mostrarRoleta.value = true; 
-        }, 300); 
+        }, 300000); 
     } else {
         clearInterval(blinkInterval);
         clearTimeout(roletaTimeout); 

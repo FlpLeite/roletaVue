@@ -117,12 +117,12 @@ export default {
 
 .secao-destacada {
   position: absolute;
-  border: 9px solid #FFD700;
+  border: 13px solid #ff0000;
   border-radius: 50%;
-  z-index: 1;
+  z-index: 10;
   width: 100%;
   height: 100%;
-  color: #FFD700;
+  color: #ff0000;
 }
 
 .modal-body {
@@ -201,12 +201,12 @@ span {
 
 .span4 {
    clip-path: polygon(71% 0, 100% 18%, 50% 50%);
-   background-color: #ff2a00;
+   background-color: #00eeff;
 }
 
 .span5 {
    clip-path: polygon(100% 18%, 100% 50%, 50% 50%);
-   background-color: #ff8000;
+   background-color: #fff200;
 }
 
 .box1 .span1 h5 {
