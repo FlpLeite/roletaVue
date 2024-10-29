@@ -74,5 +74,26 @@ namespace ProjetoP2.Controllers
 
             return NoContent();
         }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] UsuarioLogin usuarioLogin)
+        {
+            if (string.IsNullOrEmpty(usuarioLogin.Email) || string.IsNullOrEmpty(usuarioLogin.Senha))
+            {
+                return BadRequest(new { message = "Email e senha são obrigatórios." });
+            }
+
+            var usuario = await _context.Usuarios
+                .FirstOrDefaultAsync(u => u.Email == usuarioLogin.Email && u.Senha == usuarioLogin.Senha);
+
+            if (usuario == null)
+            {
+                return Unauthorized(new { message = "Credenciais inválidas." });
+            }
+
+            return Ok(new { message = "Login efetuado com sucesso!" });
+        }
+
+
     }
 }
