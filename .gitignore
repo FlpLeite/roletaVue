@@ -29,3 +29,7 @@ coverage
 
 *.tsbuildinfo
 *.vsidx
+
+# Ignorar arquivos específicos
+ProjetoP2/ProjetoP2/ProjetoP2.dll
+ProjetoP2/ProjetoP2/ProjetoP2.exe
