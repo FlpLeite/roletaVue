@@ -15,9 +15,9 @@
         <div class="col-sm-6 col-md-4">
           <div class="card border-0">
             <div class="card-body row">
-              <p class="description">Camisa Masculina Casual</p>
-              <img src="../assets/images/camisa1.png" alt="Camisa 1">
-              <p class="price"><b>$20</b></p>
+              <img src="../assets/images/camisa time 4.jpg" alt="Camisa 1">
+              <p class="price"><b>$20,99</b></p>
+              <p class="description">Camisa Masculina Casual</p> 
             </div>
           </div>
         </div>
@@ -25,7 +25,7 @@
         <div class="col-sm-6 col-md-4">
           <div class="card border-0">
             <div class="card-body row">
-              <img src="../assets/images/camisa3.png" alt="Camisa 2">
+              <img src="../assets/images/camisa time 3.jpg" alt="Camisa 2">
               <p class="price"><b>$25.99</b></p>
               <p class="description">Camisa Feminina Treino</p>
             </div>
@@ -35,9 +35,9 @@
         <div class="col-sm-6 col-md-4">
           <div class="card border-0">
             <div class="card-body row">
-              <p class="description">Camisa Masculina Esporte</p>
-              <img src="../assets/images/camisa1.png" alt="Camisa 3">
+              <img src="../assets/images/camisa time 1.jpg" alt="Camisa 3">
               <p class="price"><b>$39.99</b></p>
+               <p class="description">Camisa Masculina Esporte</p>
             </div>
           </div>
         </div>
@@ -45,7 +45,7 @@
         <div class="col-sm-6 col-md-4">
           <div class="card border-0">
             <div class="card-body row">
-              <img src="../assets/images/camisa3.png" alt="Camisa 4">
+              <img src="../assets/images/camisa time.jpg" alt="Camisa 4">
               <p class="price"><b>$29.99</b></p>
               <p class="description">Camisa Feminina Esporte</p>
             </div>
@@ -55,7 +55,7 @@
         <div class="col-sm-6 col-md-4">
           <div class="card border-0">
             <div class="card-body row">
-              <img src="../assets/images/camisa1.png" alt="Camisa 5">
+              <img src="../assets/images/camisa time 5.jpg" alt="Camisa 5">
               <p class="price"><b>$29.99</b></p>
               <p class="description">Camisa Feminina Treino</p>
             </div>
@@ -65,7 +65,7 @@
         <div class="col-sm-6 col-md-4">
           <div class="card border-0">
             <div class="card-body row">
-              <img src="../assets/images/camisa3.png" alt="Camisa 6">
+              <img src="../assets/images/camisa time 6.jpg" alt="Camisa 6">
               <p class="price"><b>$29.99</b></p>
               <p class="description">Camisa Masculina Casual</p>
             </div>
