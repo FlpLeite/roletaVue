@@ -1,6 +1,10 @@
-
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using ProjetoP2.Contexto;
+using ProjetoP2.Services;
+using ProjetoP2.ServicesInterface;
+using System.Text;
 
 namespace ProjetoP2
 {
@@ -10,17 +14,29 @@ namespace ProjetoP2
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = false,
+                        ValidateAudience = false,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SECRET_KEY"]!))
+                    };
+                });
+            builder.Services.AddAuthorization();
 
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-
             builder.Services.AddDbContext<RoletaContextMySQL>(options => {
                 options.UseMySQL(builder.Configuration.GetConnectionString("BancoMySQL"));
             });
 
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddScoped<ITokenService, TokenService>();
+            builder.Services.AddScoped<IAuthService, AuthService>();
 
             builder.Services.AddCors(options =>
             {
@@ -31,10 +47,8 @@ namespace ProjetoP2
                     });
             });
 
-
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
@@ -45,8 +59,8 @@ namespace ProjetoP2
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseAuthorization();
-
 
             app.MapControllers();
 

@@ -57,7 +57,7 @@ export default {
 
    iniciarAnimacao(premioIndex) {
       let currentIndex = 0;
-      const voltasCompletas = 10;
+      const voltasCompletas = 8;
       const tempoTotal = 6000;
       const tempoPorSetor = tempoTotal / (voltasCompletas * this.roleta.length + premioIndex);
 
@@ -85,7 +85,7 @@ export default {
          }, 300);
          } else {
          currentIndex = (currentIndex + 1) % this.roleta.length;
-         delay +=100000000
+         delay +=10000000000000
          }
       }, 100);
    },
@@ -117,12 +117,15 @@ export default {
 
 .secao-destacada {
   position: absolute;
-  border: 13px solid #ff0000;
+  border: 10px solid #000000;
   border-radius: 50%;
   z-index: 10;
   width: 100%;
   height: 100%;
-  color: #ff0000;
+}
+
+.secao-destacada::after {
+   background-color: #e51d1d;
 }
 
 .modal-body {
@@ -304,7 +307,7 @@ span {
    font-weight: bold;
    font-size: 18px;
    cursor: pointer;
-   z-index: 10000;
+   z-index: 10;
 }
 
 .spin:active{

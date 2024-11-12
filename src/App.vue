@@ -26,9 +26,9 @@ const toggleCart = () => {
 };
 
 const cartItems = ref([
-  { name: 'Camisa 1', price: '29.99', image: 'src/assets/images/camisa1.png' },
-  { name: 'Camisa 2', price: '25.99', image: 'src/assets/images/camisa3.png' },
-  { name: 'Camisa 3', price: '39.99', image: 'src/assets/images/camisa1.png' }
+  { name: 'Camisa 1', price: '29.99', image: 'src/assets/images/camisa1.jpeg' },
+  { name: 'Camisa 2', price: '25.99', image: 'src/assets/images/camisa3.jpeg' },
+  { name: 'Camisa 3', price: '39.99', image: 'src/assets/images/camisa1.jpeg' }
 ]);
 
 document.addEventListener('visibilitychange', function() {
@@ -96,7 +96,7 @@ document.addEventListener('visibilitychange', function() {
     top: 0;
     width: 100%;
     height: 15.8%;
-    z-index: 10;
+    z-index: 12;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   

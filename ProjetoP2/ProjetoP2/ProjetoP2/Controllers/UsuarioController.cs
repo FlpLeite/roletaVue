@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProjetoP2.Contexto;
 using ProjetoP2.Models;
+using ProjetoP2.ServicesInterface;
 
 namespace ProjetoP2.Controllers
 {
@@ -11,18 +12,22 @@ namespace ProjetoP2.Controllers
     public class UsuarioController : ControllerBase
     {
         private readonly RoletaContextMySQL _context;
+        private readonly IAuthService _authService;
 
-        public UsuarioController(RoletaContextMySQL context)
+        public UsuarioController(RoletaContextMySQL context, IAuthService authService)
         {
             _context = context;
+            _authService = authService;
         }
-
+        
+        [Authorize]
         [HttpGet]
         public ActionResult<IEnumerable<Usuario>> GetUsuarios()
         {
             return _context.Usuarios.ToList();
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         public ActionResult<Usuario> GetUsuario(int id)
         {
@@ -80,20 +85,18 @@ namespace ProjetoP2.Controllers
         {
             if (string.IsNullOrEmpty(usuarioLogin.Email) || string.IsNullOrEmpty(usuarioLogin.Senha))
             {
-                return BadRequest(new { message = "Email e senha são obrigatórios." });
+                return BadRequest("E-mail e senha são obrigatórios.");
             }
 
-            var usuario = await _context.Usuarios
-                .FirstOrDefaultAsync(u => u.Email == usuarioLogin.Email && u.Senha == usuarioLogin.Senha);
-
-            if (usuario == null)
+            try
             {
-                return Unauthorized(new { message = "Credenciais inválidas." });
+                string token = await _authService.SignIn(usuarioLogin.Email, usuarioLogin.Senha);
+                return Ok(new { Token = token });
             }
-
-            return Ok(new { message = "Login efetuado com sucesso!" });
+            catch (Exception ex)
+            {
+                return Unauthorized(new { Message = ex.Message });
+            }
         }
-
-
     }
 }
