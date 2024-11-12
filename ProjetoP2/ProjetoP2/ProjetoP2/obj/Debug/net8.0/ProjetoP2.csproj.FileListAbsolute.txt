@@ -849,6 +849,7 @@ C:\Users\felip\OneDrive\Documentos\terceiroSemestreADS\Roleta\roletaVue\ProjetoP
 C:\Users\felip\OneDrive\Documentos\terceiroSemestreADS\Roleta\roletaVue\ProjetoP2\ProjetoP2\ProjetoP2\bin\Debug\net8.0\K4os.Compression.LZ4.dll
 C:\Users\felip\OneDrive\Documentos\terceiroSemestreADS\Roleta\roletaVue\ProjetoP2\ProjetoP2\ProjetoP2\bin\Debug\net8.0\K4os.Compression.LZ4.Streams.dll
 C:\Users\felip\OneDrive\Documentos\terceiroSemestreADS\Roleta\roletaVue\ProjetoP2\ProjetoP2\ProjetoP2\bin\Debug\net8.0\K4os.Hash.xxHash.dll
+C:\Users\felip\OneDrive\Documentos\terceiroSemestreADS\Roleta\roletaVue\ProjetoP2\ProjetoP2\ProjetoP2\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\felip\OneDrive\Documentos\terceiroSemestreADS\Roleta\roletaVue\ProjetoP2\ProjetoP2\ProjetoP2\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
 C:\Users\felip\OneDrive\Documentos\terceiroSemestreADS\Roleta\roletaVue\ProjetoP2\ProjetoP2\ProjetoP2\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
 C:\Users\felip\OneDrive\Documentos\terceiroSemestreADS\Roleta\roletaVue\ProjetoP2\ProjetoP2\ProjetoP2\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll

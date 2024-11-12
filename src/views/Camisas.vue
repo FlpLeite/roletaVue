@@ -7,7 +7,6 @@
     <div class="container">
       <div class="row mt-4">
         <div class="col-12 text-center">
-          <h1 class="presentation">Descubra sua camisa perfeita com estilo e conforto para qualquer ocasião!</h1>
         </div>
       </div>
 
@@ -16,7 +15,7 @@
           <div class="card border-0">
             <div class="card-body row">
               <p class="description">Camisa Masculina Casual</p>
-              <img src="../assets/images/camisa1.png" alt="Camisa 1">
+              <img src="../assets/images/camisa1.jpeg" alt="Camisa 1">
               <p class="price"><b>$20</b></p>
             </div>
           </div>
@@ -25,9 +24,9 @@
         <div class="col-sm-6 col-md-4">
           <div class="card border-0">
             <div class="card-body row">
-              <img src="../assets/images/camisa3.png" alt="Camisa 2">
-              <p class="price"><b>$25.99</b></p>
               <p class="description">Camisa Feminina Treino</p>
+              <img src="../assets/images/camisa6.jpeg" alt="Camisa 2">
+              <p class="price"><b>$25.99</b></p>
             </div>
           </div>
         </div>
@@ -36,7 +35,7 @@
           <div class="card border-0">
             <div class="card-body row">
               <p class="description">Camisa Masculina Esporte</p>
-              <img src="../assets/images/camisa1.png" alt="Camisa 3">
+              <img src="../assets/images/camisa3.jpeg" alt="Camisa 3">
               <p class="price"><b>$39.99</b></p>
             </div>
           </div>
@@ -45,9 +44,9 @@
         <div class="col-sm-6 col-md-4">
           <div class="card border-0">
             <div class="card-body row">
-              <img src="../assets/images/camisa3.png" alt="Camisa 4">
-              <p class="price"><b>$29.99</b></p>
               <p class="description">Camisa Feminina Esporte</p>
+              <img src="../assets/images/camisa4.jpeg" alt="Camisa 4">
+              <p class="price"><b>$29.99</b></p>
             </div>
           </div>
         </div>
@@ -55,9 +54,9 @@
         <div class="col-sm-6 col-md-4">
           <div class="card border-0">
             <div class="card-body row">
-              <img src="../assets/images/camisa1.png" alt="Camisa 5">
-              <p class="price"><b>$29.99</b></p>
               <p class="description">Camisa Feminina Treino</p>
+              <img src="../assets/images/camisa5.jpeg" alt="Camisa 5">
+              <p class="price"><b>$29.99</b></p>
             </div>
           </div>
         </div>
@@ -65,9 +64,9 @@
         <div class="col-sm-6 col-md-4">
           <div class="card border-0">
             <div class="card-body row">
-              <img src="../assets/images/camisa3.png" alt="Camisa 6">
-              <p class="price"><b>$29.99</b></p>
               <p class="description">Camisa Masculina Casual</p>
+              <img src="../assets/images/camisa2.jpeg" alt="Camisa 6">
+              <p class="price"><b>$29.99</b></p>
             </div>
           </div>
         </div>
@@ -86,23 +85,10 @@
     color: rgb(6, 50, 107);
   }
 
-  .desconto {
-    color: whitesmoke;
-    display: flex;
-    border-radius: 20px;
-    background-color: blue;
-    justify-content: center;
-  }
-
   b {
     font-size: x-large;
-    color: rgb(6, 50, 107);
   }
-
-  .price {
-    font-size: larger;
-  }
-
+  
   .description {
     font-size: medium;
     color: #555;
@@ -169,7 +155,7 @@
   }
 
   .card:active::after {
-    content: "Adicionado !";
+    content: "Adicionado!";
     height: 3.6em;
   }
 
