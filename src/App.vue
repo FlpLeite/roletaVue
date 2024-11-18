@@ -1,7 +1,9 @@
 <script setup>
 import {ref} from "vue"
+import { useRouter } from 'vue-router' 
 import Roleta from "./components/Roleta.vue"
 import CartSidebar from './components/CartSidebar.vue'
+import Camisas from './views/Camisas.vue'
 
 let originalTitle = document.title;
 let blinkInterval;
@@ -10,6 +12,19 @@ let roletaTimeout;
 const mostrarRoleta = ref(false);
 const mostrarCarrinho = ref(false);
 
+const cartItems = ref([]);
+
+const handleAddToCart = (camisa) => {
+  cartItems.value.push(camisa);
+};
+
+const camisasOpen = () => {
+  mostrarCamisa.value = false;
+}
+
+const camisasClosed = () => {
+  mostrarCamisa.value = true;
+}
 
 const handleCartClosed = () => {
   mostrarCarrinho.value = false;
@@ -25,27 +40,22 @@ const toggleCart = () => {
   mostrarCarrinho.value = !mostrarCarrinho.value;
 };
 
-const cartItems = ref([
-  { name: 'Camisa 1', price: '29.99', image: 'src/assets/images/camisa1.jpeg' },
-  { name: 'Camisa 2', price: '25.99', image: 'src/assets/images/camisa3.jpeg' },
-  { name: 'Camisa 3', price: '39.99', image: 'src/assets/images/camisa1.jpeg' }
-]);
 
-document.addEventListener('visibilitychange', function() {
-    if (document.hidden) {
-        blinkInterval = setInterval(function() {
-            document.title = document.title === "Ainda está aí?" ? " ‎  " : "Ainda está aí?";
-        }, 1000);
+// document.addEventListener('visibilitychange', function() {
+//     if (document.hidden) {
+//         blinkInterval = setInterval(function() {
+//             document.title = document.title === "Ainda está aí?" ? " ‎  " : "Ainda está aí?";
+//         }, 1000);
         
-        roletaTimeout = setTimeout(() => {
-            mostrarRoleta.value = true; 
-        }, 300000); 
-    } else {
-        clearInterval(blinkInterval);
-        clearTimeout(roletaTimeout); 
-        document.title = originalTitle;
-    }
-});
+//         roletaTimeout = setTimeout(() => {
+//             mostrarRoleta.value = true; 
+//         }, 30); 
+//     } else {
+//         clearInterval(blinkInterval);
+//         clearTimeout(roletaTimeout); 
+//         document.title = originalTitle;
+//     }
+// });
 
 </script>
 
@@ -84,8 +94,9 @@ document.addEventListener('visibilitychange', function() {
       v-model:show="mostrarCarrinho"
       :cartItems="cartItems"
       @cart-closed="handleCartClosed"
-      @show-roleta="handleShowRoleta"
     />
+    <!-- <Camisas @add-to-cart="handleAddToCart"></Camisas> -->
+    
     <router-view></router-view>
 </div>
 </template>
