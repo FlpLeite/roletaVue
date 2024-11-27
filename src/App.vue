@@ -11,6 +11,11 @@ let roletaTimeout;
 
 const mostrarRoleta = ref(false);
 const mostrarCarrinho = ref(false);
+const mostrarCamisas = ref(false);
+
+const toggleCamisas = () => {
+  mostrarCamisas.value = !mostrarCamisas.value;
+};
 
 const cartItems = ref([]);
 
@@ -18,13 +23,6 @@ const handleAddToCart = (camisa) => {
   cartItems.value.push(camisa);
 };
 
-const camisasOpen = () => {
-  mostrarCamisa.value = false;
-}
-
-const camisasClosed = () => {
-  mostrarCamisa.value = true;
-}
 
 const handleCartClosed = () => {
   mostrarCarrinho.value = false;
@@ -41,21 +39,21 @@ const toggleCart = () => {
 };
 
 
-// document.addEventListener('visibilitychange', function() {
-//     if (document.hidden) {
-//         blinkInterval = setInterval(function() {
-//             document.title = document.title === "Ainda está aí?" ? " ‎  " : "Ainda está aí?";
-//         }, 1000);
+document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+        blinkInterval = setInterval(function() {
+            document.title = document.title === "Ainda está aí?" ? " ‎  " : "Ainda está aí?";
+        }, 1000);
         
-//         roletaTimeout = setTimeout(() => {
-//             mostrarRoleta.value = true; 
-//         }, 30); 
-//     } else {
-//         clearInterval(blinkInterval);
-//         clearTimeout(roletaTimeout); 
-//         document.title = originalTitle;
-//     }
-// });
+        roletaTimeout = setTimeout(() => {
+            mostrarRoleta.value = true; 
+        }, 300); 
+    } else {
+        clearInterval(blinkInterval);
+        clearTimeout(roletaTimeout); 
+        document.title = originalTitle;
+    }
+});
 
 </script>
 
@@ -68,7 +66,7 @@ const toggleCart = () => {
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/camisas">Camisas</a>
+            <a class="nav-link" @click="toggleCamisas">Camisas</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -95,8 +93,8 @@ const toggleCart = () => {
       :cartItems="cartItems"
       @cart-closed="handleCartClosed"
     />
+    <Camisas v-if="mostrarCamisas" @add-to-cart="handleAddToCart"></Camisas>
     <!-- <Camisas @add-to-cart="handleAddToCart"></Camisas> -->
-    
     <router-view></router-view>
 </div>
 </template>
