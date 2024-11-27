@@ -1,7 +1,9 @@
 <script setup>
 import {ref} from "vue"
+import { useRouter } from 'vue-router' 
 import Roleta from "./components/Roleta.vue"
 import CartSidebar from './components/CartSidebar.vue'
+import Camisas from './views/Camisas.vue'
 
 let originalTitle = document.title;
 let blinkInterval;
@@ -9,6 +11,17 @@ let roletaTimeout;
 
 const mostrarRoleta = ref(false);
 const mostrarCarrinho = ref(false);
+const mostrarCamisas = ref(false);
+
+const toggleCamisas = () => {
+  mostrarCamisas.value = !mostrarCamisas.value;
+};
+
+const cartItems = ref([]);
+
+const handleAddToCart = (camisa) => {
+  cartItems.value.push(camisa);
+};
 
 
 const handleCartClosed = () => {
@@ -25,11 +38,6 @@ const toggleCart = () => {
   mostrarCarrinho.value = !mostrarCarrinho.value;
 };
 
-const cartItems = ref([
-  { name: 'Camisa 1', price: '29.99', image: 'src/assets/images/camisa1.jpeg' },
-  { name: 'Camisa 2', price: '25.99', image: 'src/assets/images/camisa3.jpeg' },
-  { name: 'Camisa 3', price: '39.99', image: 'src/assets/images/camisa1.jpeg' }
-]);
 
 document.addEventListener('visibilitychange', function() {
     if (document.hidden) {
@@ -39,7 +47,7 @@ document.addEventListener('visibilitychange', function() {
         
         roletaTimeout = setTimeout(() => {
             mostrarRoleta.value = true; 
-        }, 300000); 
+        }, 300); 
     } else {
         clearInterval(blinkInterval);
         clearTimeout(roletaTimeout); 
@@ -58,7 +66,7 @@ document.addEventListener('visibilitychange', function() {
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/camisas">Camisas</a>
+            <a class="nav-link" @click="toggleCamisas">Camisas</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -84,8 +92,9 @@ document.addEventListener('visibilitychange', function() {
       v-model:show="mostrarCarrinho"
       :cartItems="cartItems"
       @cart-closed="handleCartClosed"
-      @show-roleta="handleShowRoleta"
     />
+    <Camisas v-if="mostrarCamisas" @add-to-cart="handleAddToCart"></Camisas>
+    <!-- <Camisas @add-to-cart="handleAddToCart"></Camisas> -->
     <router-view></router-view>
 </div>
 </template>

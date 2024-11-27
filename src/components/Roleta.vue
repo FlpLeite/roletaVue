@@ -3,109 +3,94 @@ import httpCommon from '@/http-common';
 </script>
 
 <template>
-  <div v-if="modalVisivel" class="modal-body">
-    <div class="mainbox" id="mainbox">
-      <div class="box" id="box">
-        <div class="box1">
-          <span :class="['font', 'span1', { 'secao-destacada': activeSection === 0 }]"><h5>{{ roleta[0].nome }}</h5></span>
-          <span :class="['font', 'span2', { 'secao-destacada': activeSection === 1 }]"><h5>{{ roleta[1].nome }}</h5></span>
-          <span :class="['font', 'span3', { 'secao-destacada': activeSection === 2 }]"><h5>{{ roleta[2].nome }}</h5></span>
-          <span :class="['font', 'span4', { 'secao-destacada': activeSection === 3 }]"><h5>{{ roleta[3].nome }}</h5></span>
-          <span :class="['font', 'span5', { 'secao-destacada': activeSection === 4 }]"><h5>{{ roleta[4].nome }}</h5></span>
-        </div>
-        <div class="box2">
-          <span :class="['font', 'span1', { 'secao-destacada': activeSection === 5 }]"><h5>{{ roleta[5].nome }}</h5></span>
-          <span :class="['font', 'span2', { 'secao-destacada': activeSection === 6 }]"><h5>{{ roleta[6].nome }}</h5></span>
-          <span :class="['font', 'span3', { 'secao-destacada': activeSection === 7 }]"><h5>{{ roleta[7].nome }}</h5></span>
-          <span :class="['font', 'span4', { 'secao-destacada': activeSection === 8 }]"><h5>{{ roleta[8].nome }}</h5></span>
-          <span :class="['font', 'span5', { 'secao-destacada': activeSection === 9 }]"><h5>{{ roleta[9].nome }}</h5></span>
-        </div>
-        <button class="spin" @click="girar()":disabled="botaoDisabled">GIRAR</button>
-      </div>
-    </div>
-  </div>
-</template>
-
-<script>
-export default {
-  data() {
-    return {
-      botaoDisabled: false,
-      modalVisivel: true,
-      roleta: [],
-      activeSection: null,
-    };
-  },
-  created() {
-    httpCommon.get("api/Premios")
-      .then((data) => {
-        console.log("Dados carregados", { data });
-        this.roleta = data.data;
-      })
-      .catch((error) => {
-        console.log("Erro", error);
-      });
-  },
-  methods: {
-   girar() {
-      console.log("Função girar foi chamada");
-      const numSetores = this.roleta.length;
-      const premioIndex = Math.floor(Math.random() * numSetores);
-      this.iniciarAnimacao(premioIndex);
-      this.botaoDisabled = true;
+   <div v-if="modalVisivel" class="modal-body">
+     <div class="mainbox" id="mainbox">
+       <div class="box" id="box">
+         <div class="box1">
+           <span :class="['font', 'span1', { 'secao-destacada': activeSection === 0 }]"><h5>{{ roleta[0].nome }}</h5></span>
+           <span :class="['font', 'span2', { 'secao-destacada': activeSection === 1 }]"><h5>{{ roleta[1].nome }}</h5></span>
+           <span :class="['font', 'span3', { 'secao-destacada': activeSection === 2 }]"><h5>{{ roleta[2].nome }}</h5></span>
+           <span :class="['font', 'span4', { 'secao-destacada': activeSection === 3 }]"><h5>{{ roleta[3].nome }}</h5></span>
+           <span :class="['font', 'span5', { 'secao-destacada': activeSection === 4 }]"><h5>{{ roleta[4].nome }}</h5></span>
+         </div>
+         <div class="box2">
+           <span :class="['font', 'span1', { 'secao-destacada': activeSection === 5 }]"><h5>{{ roleta[5].nome }}</h5></span>
+           <span :class="['font', 'span2', { 'secao-destacada': activeSection === 6 }]"><h5>{{ roleta[6].nome }}</h5></span>
+           <span :class="['font', 'span3', { 'secao-destacada': activeSection === 7 }]"><h5>{{ roleta[7].nome }}</h5></span>
+           <span :class="['font', 'span4', { 'secao-destacada': activeSection === 8 }]"><h5>{{ roleta[8].nome }}</h5></span>
+           <span :class="['font', 'span5', { 'secao-destacada': activeSection === 9 }]"><h5>{{ roleta[9].nome }}</h5></span>
+         </div>
+         <button class="spin" @click="girar" :disabled="botaoDisabled">GIRAR</button>
+       </div>
+     </div>
+   </div>
+ </template>
+ 
+ <script>
+ export default {
+   data() {
+     return {
+       botaoDisabled: false,
+       modalVisivel: true,
+       roleta: [],
+       activeSection: null,
+     };
    },
-
-   iniciarAnimacao(premioIndex) {
-      let currentIndex = 0;
-      const voltasCompletas = 8;
-      const tempoTotal = 6000;
-      const tempoPorSetor = tempoTotal / (voltasCompletas * this.roleta.length + premioIndex);
-
-      const interval = setInterval(() => {
+   created() {
+     httpCommon.get("api/Premios")
+       .then((data) => {
+         this.roleta = data.data;
+       })
+       .catch((error) => {
+         console.log("Erro", error);
+       });
+   },
+   methods: {
+     girar() {
+       const numSetores = this.roleta.length;
+       const premioIndex = Math.floor(Math.random() * numSetores);
+       this.iniciarAnimacao(premioIndex);
+       this.botaoDisabled = true;
+     },
+ 
+     iniciarAnimacao(premioIndex) {
+       let currentIndex = 0;
+       const voltasCompletas = 8;
+       const tempoTotal = 6000;
+       const tempoPorSetor = tempoTotal / (voltasCompletas * this.roleta.length + premioIndex);
+ 
+       const interval = setInterval(() => {
          this.activeSection = currentIndex;
          currentIndex = (currentIndex + 1) % this.roleta.length;
-      }, tempoPorSetor);
-
-      setTimeout(() => {
+       }, tempoPorSetor);
+ 
+       setTimeout(() => {
          clearInterval(interval);
-         this.destacarPremio(premioIndex, currentIndex);
-      }, tempoTotal);
+         this.destacarPremio(premioIndex);
+       }, tempoTotal);
+     },
+ 
+     destacarPremio(premioIndex) {
+       setTimeout(() => {
+         alert("Você ganhou: " + this.roleta[premioIndex].nome);
+         const desconto = parseInt(this.roleta[premioIndex].nome.replace("%", ""));
+         this.aplicarDesconto(desconto);
+         this.fecharModal();
+       }, 300);
+     },
+ 
+     aplicarDesconto(desconto) {
+       console.log("Desconto sendo aplicado", desconto);
+       const event = new CustomEvent("aplicar-desconto", { detail: desconto });
+       window.dispatchEvent(event);
+     },
+ 
+     fecharModal() {
+       this.modalVisivel = false;
+     },
    },
-
-   destacarPremio(premioIndex, currentIndex) {
-      let delay = 10000; 
-      const interval = setInterval(() => {
-         this.activeSection = currentIndex;
-         if (currentIndex === premioIndex) {
-         clearInterval(interval);
-         setTimeout(() => {
-            alert("Você ganhou: " + this.roleta[premioIndex].nome);
-            this.resetarRoleta();
-            this.fecharModal();
-         }, 300);
-         } else {
-         currentIndex = (currentIndex + 1) % this.roleta.length;
-         delay +=10000000000000
-         }
-      }, 100);
-   },
-
-   aplicarDesconto (desconto){
-      console.log("Desconto sendo aplicado na roleta", { valor: desconto });
-      const event = new CustomEvent('aplicar-desconto', { detail: desconto });
-      window.dispatchEvent(event);
-   },
-
-   resetarRoleta() {
-      this.activeSection = null;
-   },
-
-   fecharModal() {
-      this.modalVisivel = false;
-   }
- },
-};
-</script>
+ };
+ </script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jacquard+12+Charted&display=swap');

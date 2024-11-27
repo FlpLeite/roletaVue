@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\TesteComSelenium.props" />
+</Project>
