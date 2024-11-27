@@ -11,6 +11,9 @@ This project was developed at the college, integrated with three subjects (Proje
 
 # Discount Wheel
 
+![image](https://github.com/user-attachments/assets/453a0693-0a6f-4c9b-987d-31988c332627)
+
+
 In order to solve the problem of cart abandonment in an e-commerce platform, we approached several solutions in this project, with the main one being a Wheel that randomly selects discounts on the total cart value. It was developed using Vue.js, C#, and MySQL.
 
 ### Prerequisites
